@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 26, 26, 26;
+}
+
+@layer base {
+  body {
+    @apply text-white bg-background;
+  }
+}
+
+/* Optional: Add font smoothing */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
