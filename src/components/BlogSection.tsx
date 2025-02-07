@@ -6,7 +6,14 @@ import BlogPost from '@/components/BlogPost';
 import LoadingPost from '@/components/LoadingPost';
 
 // Fallback posts for development
-const FALLBACK_POSTS = [
+interface PostType {
+  title: string;
+  author: string;
+  description: string;
+  link: string;
+}
+
+const FALLBACK_POSTS: PostType[] = [
   {
     title: 'Sample Blog Post',
     author: 'Author Name',
@@ -72,12 +79,12 @@ export default function BlogSection() {
             <div className="text-red-400">
               Error loading posts. Using sample content.
             </div>
-            {FALLBACK_POSTS.map((post, index) => (
+            {FALLBACK_POSTS.map((post: PostType, index) => (
               <BlogPost key={index} {...post} />
             ))}
           </div>
         ) : (
-          posts?.map((post, index) => (
+          posts?.map((post: PostType, index) => (
             <BlogPost key={index} {...post} />
           ))
         )}
