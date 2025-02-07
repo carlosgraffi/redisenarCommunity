@@ -25,7 +25,15 @@ export async function GET() {
       const apiResponse = await fetch(`${SUBSTACK_URL}/api/v1/archive`);
       if (apiResponse.ok) {
         const apiPosts = await apiResponse.json();
-        return NextResponse.json(apiPosts.slice(0, 3).map(post => ({
+        type PostType = {
+  title: string;
+  description?: string;
+  subtitle?: string;
+  slug: string;
+  author?: string;
+};
+
+return NextResponse.json(apiPosts.slice(0, 3).map((post: PostType) => ({
           title: post.title,
           description: post.description || post.subtitle || '',
           link: `${SUBSTACK_URL}/p/${post.slug}`,
