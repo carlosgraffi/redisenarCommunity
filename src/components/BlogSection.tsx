@@ -43,7 +43,7 @@ async function fetchPosts() {
 }
 
 export default function BlogSection() {
-  const { data: posts, isLoading, isError, error } = useQuery({
+  const { data: posts, isLoading, isError } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts,
     retry: 2,
