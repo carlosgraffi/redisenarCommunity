@@ -5,7 +5,8 @@ import type { NextRequest } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
-    const ip = request.ip || 'unknown';
+    // In Next.js App Router, you can use headers to get forwarded IP
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown';
     
     // Log bot detection
     console.log(`Bot detected via honeypot: ${ip} - ${data.userAgent || 'Unknown UA'}`);
