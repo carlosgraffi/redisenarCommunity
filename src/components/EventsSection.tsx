@@ -14,12 +14,12 @@ interface Event {
 
 const events: Event[] = [
   {
-    title: "Intro: Diseño, Low-Code & AI",
+    title: "Workshop: diseñar construyendo",
     date: null, // coming soon
     type: "online",
     location: null,
     description: "Aprendé las bases para desarrollar un MVP o proyecto funcional con herramientas low-code, generadores de interfaz y cómo, desde el diseño, también podemos construir y salir a testear un proyecto en horas. Las personas suscriptas al Substack de la comunidad van a recibir un acceso anticipado a la fecha del evento.",
-    url: null
+    url: "https://tally.so/r/wgklJ1"
   }
 ] as const;
 
@@ -76,14 +76,22 @@ const EventCard = ({ event }: { event: Event }) => {
 
         {/* Add subscription button for coming soon events */}
         {!event.date && (
-          <div className="mt-6">
+          <div className="flex flex-column gap-4 mt-6">
             <a 
               href="https://redisenar.substack.com"
+              target='_blank'
+              className="inline-block bg-white text-black align-middle border-2 py-3 px-6 font-bold text-sm tracking-wider hover:bg-white hover:text-black hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
+              aria-label="Suscribite para enterarte antes sobre este evento"
+            >
+              Suscribirse
+            </a>
+            <a 
+              href="https://tally.so/r/wgklJ1"
               target='_blank'
               className="inline-block bg-transparent text-white border-2 py-3 px-6 font-bold text-sm tracking-wider hover:bg-white hover:text-black hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
               aria-label="Suscribite para enterarte antes sobre este evento"
             >
-              Suscribite para enterarte antes
+              Quiero que me avisen
             </a>
           </div>
         )}
