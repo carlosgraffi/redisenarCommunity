@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import QueryProvider from '@/components/QueryProvider';
+import Honeypot from '@/components/Honeypot'; // Assuming Honeypot component exists
 
 const tostada = localFont({
   src: '../../public/fonts/TOSTADA.ttf',
@@ -69,6 +70,7 @@ export default function RootLayout({
             Saltar al contenido principal
           </a>
           {children}
+          <Honeypot /> {/* Added Honeypot component */}
         </QueryProvider>
       </body>
     </html>
