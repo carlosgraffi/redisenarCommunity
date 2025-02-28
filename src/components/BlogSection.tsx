@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import BlogPost from '@/components/BlogPost';
 import LoadingPost from '@/components/LoadingPost';
 
-// Fallback posts for development
 interface PostType {
   title: string;
   author: string;
@@ -32,7 +31,7 @@ const FALLBACK_POSTS: PostType[] = [
     description: 'This is a third sample blog post.',
     link: '#'
   }
-];
+] as const;
 
 async function fetchPosts() {
   try {
@@ -45,7 +44,7 @@ async function fetchPosts() {
     return data.length > 0 ? data : FALLBACK_POSTS;
   } catch (error) {
     console.error('Error fetching posts:', error);
-    return FALLBACK_POSTS; // Fallback to sample posts on error
+    return FALLBACK_POSTS;
   }
 }
 
@@ -58,16 +57,25 @@ export default function BlogSection() {
   });
 
   return (
-    <section className="py-16 md:py-24 lg:py-32">
+    <section 
+      className="py-16 md:py-24 lg:py-32"
+      aria-labelledby="blog-section-title"
+    >
       <motion.h2 
+        id="blog-section-title"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
-        className="text-2xl mb-24 text-center"
+        className="text-xl mb-24 text-center"
       >
-        Artículos de la comunidad
+        Artículos
       </motion.h2>
-      <div className="space-y-24 max-w-2xl mx-auto">
+      <div 
+        className="space-y-24 max-w-2xl mx-auto"
+        role="feed"
+        aria-busy={isLoading}
+        aria-label="Lista de artículos del blog"
+      >
         {isLoading ? (
           <>
             <LoadingPost />
@@ -75,16 +83,20 @@ export default function BlogSection() {
             <LoadingPost />
           </>
         ) : isError ? (
-          <div className="text-center space-y-4">
+          <div 
+            className="text-center space-y-4"
+            role="alert"
+            aria-live="polite"
+          >
             <div className="text-red-400">
-              Error loading posts. Using sample content.
+              Error al cargar los artículos. Mostrando contenido de ejemplo.
             </div>
             {FALLBACK_POSTS.map((post: PostType, index) => (
               <BlogPost key={index} {...post} />
             ))}
           </div>
         ) : (
-          posts?.map((post: PostType, index) => (
+          posts?.map((post: PostType, index: number) => (
             <BlogPost key={index} {...post} />
           ))
         )}

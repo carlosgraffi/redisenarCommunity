@@ -15,14 +15,27 @@ export default function ScrollToTop() {
       }
     };
 
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === 'Home') {
+        event.preventDefault();
+        scrollToTop();
+      }
+    };
+
     window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    window.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+      window.removeEventListener('keydown', handleKeyPress);
+    };
   }, []);
 
   const scrollToTop = () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: prefersReducedMotion ? 'auto' : 'smooth'
     });
   };
 
@@ -35,13 +48,19 @@ export default function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 p-4 bg-white/10 hover:bg-white/20 
-                     backdrop-blur-sm rounded-full transition-colors duration-300"
+                     backdrop-blur-sm rounded-full transition-colors duration-300
+                     focus:outline-none focus:ring-2 focus:ring-white/50
+                     z-50"
+          aria-label="Volver al inicio de la página"
+          title="Presiona 'Home' o haz clic para volver al inicio"
         >
           <svg
             className="w-6 h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
+            role="presentation"
           >
             <path
               strokeLinecap="round"
