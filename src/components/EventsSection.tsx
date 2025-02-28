@@ -80,7 +80,7 @@ const EventCard = ({ event }: { event: Event }) => {
             <a 
               href="https://redisenar.substack.com"
               target='_blank'
-              className="inline-block bg-white text-black align-middle border-2 py-3 px-6 font-bold text-sm tracking-wider hover:bg-white hover:text-black hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="inline-flex items-center justify-center bg-white text-black border-2 py-3 px-6 font-bold text-sm tracking-wider hover:bg-white hover:text-black hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
               aria-label="Suscribite para enterarte antes sobre este evento"
             >
               Suscribirse
@@ -88,7 +88,7 @@ const EventCard = ({ event }: { event: Event }) => {
             <a 
               href="https://tally.so/r/wgklJ1"
               target='_blank'
-              className="inline-block bg-transparent text-white border-2 py-3 px-6 font-bold text-sm tracking-wider hover:bg-white hover:text-black hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="inline-flex items-center justify-center bg-transparent text-white border-2 py-3 px-6 font-bold text-sm tracking-wider hover:bg-white hover:text-black hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
               aria-label="Suscribite para enterarte antes sobre este evento"
             >
               Quiero que me avisen
