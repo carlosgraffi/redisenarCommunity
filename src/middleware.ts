@@ -26,7 +26,7 @@ const RATE_LIMIT_MAX_REQUESTS = 100; // 100 requests per minute
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
 
 export function middleware(request: NextRequest) {
-  const ip = request.ip || 'unknown';
+  const ip = request.headers.get('x-forwarded-for') || 'unknown';
   const userAgent = request.headers.get('user-agent');
   const country = request.geo?.country || '';
   const isProtectedRoute = !request.nextUrl.pathname.match(/^\/(_next|public|fonts|static|favicon\.ico)/);
