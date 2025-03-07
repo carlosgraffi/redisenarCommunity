@@ -6,10 +6,12 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getEventBySlug, getAllEventSlugs } from "@/lib/events";
 
-// ✅ Define correct type
-type PageParams = { slug: string };
-
-export async function generateMetadata({ params }: { params: PageParams }): Promise<Metadata> {
+// Use params directly with the correct type instead of a custom type
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: { slug: string } 
+}): Promise<Metadata> {
   const event = await getEventBySlug(params.slug);
 
   if (!event) {
@@ -38,7 +40,11 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export default async function EventPage({ params }: { params: PageParams }) {
+export default async function EventPage({ 
+  params 
+}: { 
+  params: { slug: string } 
+}) {
   const event = await getEventBySlug(params.slug);
 
   if (!event) {
