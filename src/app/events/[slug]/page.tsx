@@ -40,8 +40,8 @@ export async function generateStaticParams() {
   return slugs.map(slug => ({ slug }));
 }
 
-// Remove typing from component parameters to let Next.js infer it
-export default function EventPage({ params }: any) {
+// Use proper type annotation
+export default function EventPage({ params }: { params: PageParams }) {
   const slug = params.slug;
   const event = getEventBySlug(slug);
 
