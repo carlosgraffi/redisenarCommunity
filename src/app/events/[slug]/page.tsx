@@ -40,7 +40,7 @@ export async function generateStaticParams() {
   return slugs.map(slug => ({ slug }));
 }
 
-// Use proper type annotation
+// Fix type annotation to match Next.js page component requirements
 export default function EventPage({ params }: { params: PageParams }) {
   const slug = params.slug;
   const event = getEventBySlug(slug);
@@ -203,14 +203,11 @@ export default function EventPage({ params }: { params: PageParams }) {
                       const intro = listItems.shift(); // Get the text before the first bullet
 
                       return (
-                        <div key={i} className="mb-4">
-                          {intro && <p className="mb-2">{intro}</p>}
-                          <ul className="list-none pl-0 space-y-3">
-                            {listItems.map((item, j) => (
-                              <li key={j} className="flex items-start">
-                                <span className="text-xl mr-3 text-gray-400">✦</span>
-                                <span>{item}</span>
-                              </li>
+                        <div key={i}>
+                          {intro && <p>{intro}</p>}
+                          <ul className="mt-4 list-disc pl-6 space-y-2">
+                            {listItems.map((item, idx) => (
+                              <li key={idx}>{item}</li>
                             ))}
                           </ul>
                         </div>
@@ -218,9 +215,7 @@ export default function EventPage({ params }: { params: PageParams }) {
                     } else {
                       // Regular paragraph
                       return (
-                        <p key={i} className="mb-4">
-                          {paragraph}
-                        </p>
+                        <p key={i}>{paragraph}</p>
                       );
                     }
                   })}
