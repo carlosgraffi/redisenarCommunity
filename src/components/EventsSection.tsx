@@ -14,12 +14,12 @@ interface Event {
 
 const events: Event[] = [
   {
-    title: "Workshop: diseñar construyendo",
+    title: "Diseñar y Construir",
     date: null, // coming soon
     type: "online",
     location: null,
-    description: "Aprendé las bases para desarrollar un MVP o proyecto funcional con herramientas low-code, generadores de interfaz y cómo, desde el diseño, también podemos construir y salir a testear un proyecto en horas. Las personas suscriptas al Substack de la comunidad van a recibir un acceso anticipado a la fecha del evento.",
-    url: "https://tally.so/r/wgklJ1"
+    description: "Aprendé las bases para desarrollar un MVP o proyecto funcional en horas, siguiendo el caso de estudio de AyudaPatagonia.ar. Vamos a explorar herramientas low-code, IDEs, generadores de interfaz y cómo, desde el diseño, también podemos construir y salir a testear un proyecto en horas. Las personas suscritas al Substack de la Rediseñar van a recibir un acceso anticipado a la fecha y una sesión de tutoría personalizada.",
+    url: null
   }
 ] as const;
 
@@ -81,15 +81,15 @@ const EventCard = ({ event }: { event: Event }) => {
               href="https://redisenar.substack.com"
               target='_blank'
               className="inline-flex items-center justify-center bg-white text-black border-2 py-3 px-6 font-bold text-sm tracking-wider hover:bg-white hover:text-black hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
-              aria-label="Suscribite para enterarte antes sobre este evento"
+              aria-label="Suscribite a Rediseñar para enterarte antes sobre este evento"
             >
-              Suscribirse
+              Suscribirme a Rediseñar
             </a>
             <a 
               href="https://tally.so/r/wgklJ1"
               target='_blank'
               className="inline-flex items-center justify-center bg-transparent text-white border-2 py-3 px-6 font-bold text-sm tracking-wider hover:bg-white hover:text-black hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
-              aria-label="Suscribite para enterarte antes sobre este evento"
+              aria-label="Completa este formulario para enterarte antes sobre este evento"
             >
               Quiero que me avisen
             </a>

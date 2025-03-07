@@ -23,18 +23,22 @@ export default function Home() {
             <p className="text-lg md:text-xl leading-relaxed mb-8">
               <span className="font-bold">Rediseñar </span>
               es una comunidad dedicada a explorar la intersección
-              entre diseño, clima, tecnología y sociedad, desde un enfoque humanista, responsable y sostenible. Creemos en: 
+              entre diseño, clima, tecnología y sociedad, desde un enfoque humanista, responsable y sostenible. Creemos en:
             </p>
-            <p className="text-lg md:text-xl leading-relaxed mb-8">
-              El diseño como una herramienta de transformación social. Rediseñar las formas y lo que nos rodea, como un acto de rebeldía creativa e intelectual. 
-            </p>
-            <p className="text-lg md:text-xl leading-relaxed mb-8">
-              El rol de los diseñadores como agentes de cambio, capaces de intervenir en la realidad de
-              las personas y el mundo.{" "}
-            </p>
-            <p className="text-lg md:text-xl leading-relaxed mb-8">
-              El encuentro en comunidad como medio vital y catalizador de nuestra especie para generar cambio perdurable y memorable.
-            </p>
+            <ul className="space-y-6 list-none pl-0">
+              <li className="text-lg md:text-xl leading-relaxed flex items-start">
+                <span className="text-xl mr-3 text-gray-400">✦</span>
+                <span>El diseño como una herramienta de transformación social. Rediseñar las formas y lo que nos rodea, como un acto de rebeldía creativa e intelectual.</span>
+              </li>
+              <li className="text-lg md:text-xl leading-relaxed flex items-start">
+                <span className="text-xl mr-3 text-gray-400">✦</span>
+                <span>El rol de los diseñadores como agentes de cambio, capaces de intervenir en la realidad de las personas y el mundo.</span>
+              </li>
+              <li className="text-lg md:text-xl leading-relaxed flex items-start">
+                <span className="text-xl mr-3 text-gray-400">✦</span>
+                <span>El encuentro en comunidad como medio vital y catalizador de nuestra especie para generar cambio perdurable y memorable.</span>
+              </li>
+            </ul>
           </div>
         </section>
 
