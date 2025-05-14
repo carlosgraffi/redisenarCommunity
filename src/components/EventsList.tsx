@@ -41,7 +41,7 @@ const EventCard = ({ event }: { event: Event }) => {
             </span>
             {event.type && (
               <span className="inline-flex items-center gap-1 text-sm bg-gray-800 text-gray-300 px-3 py-1 rounded-full">
-                {event.type === 'online' ? (
+                {event.type === 'online' || event.type === 'past' ? (
                   <>
                     <Globe size={14} className="text-gray-400" />
                     Online
@@ -61,13 +61,9 @@ const EventCard = ({ event }: { event: Event }) => {
                       </a>
                     ) : (
                       event.location
-                    ) : (
-                    {event.type === 'past' ? (
-                      <>
-                        <Globe size={14} className="text-gray-400" />
-                        Online
-                      </>
                     )}
+                  </>
+                )}
                   </>
                 )}
               </span>
