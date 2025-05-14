@@ -5,7 +5,7 @@ export interface Event {
   slug: string;
   title: string;
   date: string | null; // null for "coming soon"
-  type: 'online' | 'in-person'| null;
+  type: 'online' | 'in-person'| 'past' | null;
   location: string | null; // null if online, otherwise location name
   locationUrl?: string; // URL to Google Maps or other address link
   description: string;
@@ -31,14 +31,14 @@ export interface Event {
     {
       id: '1',
       slug: 'disenar-y-construir',
-      title: "Diseñar y Construir con AI",
-      date: null, // coming soon
-      type: "in-person",
+      title: "Intro: Diseñar y Construir - Diseño + AI",
+      date: "04/03/2025", // coming soon
+      type: "past",
       location: "A definir",
       price: "Gratis", // Free for this event
-      registrationUrl: null,
+      registrationUrl: "https://calendar.app.google/hWBZzVPMmPqgSonc8",
       description: "Aprendé las bases para desarrollar un MVP funcional en horas –o hasta minutos. En este conversatorio la idea es que entres sin nada y te vayas sabiendo lo básico para diseñar y construir al mismo tiempo, aunque no sepas mucho de código.",
-      longDescription: "Vamos a explorar herramientas low-code, IDEs, generadores de interfaz y cómo desde el diseño también podemos construir y salir a testear un proyecto de manera autónoma.\n\nEn este taller práctico, vamos a ver:\n- Herramientas como Replit, Claude, v0 y su workflow con Figma. \n- Qué hace falta saber –y qué no. \n- Tips y prompts claves. \n- Cómo intervenir el diseño en el código. \n- Para qué nos sirve construir diseño de esta manera.\n- El caso de estudio de AyudaPatagonia.ar (+ te llevás el código).\n\n ***La modalidad (presencial u online) y la fecha van a depender de cuantas personas registren interés y desde dónde puedan participar. El taller se va a anunciar a través del Substack de Rediseñar (si te suscribís, te llega al mail y es más fácil).***\n\nEvento en conjunto con la comunidad IxDF Córdoba.",
+      longDescription: "Vamos a explorar herramientas low-code, IDEs, generadores de interfaz y cómo desde el diseño también podemos construir y salir a testear un proyecto de manera autónoma.\n\nEn este taller práctico, vamos a ver:\n- Herramientas como Replit, Claude, v0 y su workflow con Figma. \n- Qué hace falta saber –y qué no. \n- Tips y prompts claves. \n- Cómo intervenir el diseño en el código. \n- Para qué nos sirve construir diseño de esta manera. \n- El caso de estudio de AyudaPatagonia.ar (+ te llevás el código). \n\nAgenda: \n- Introducción a la temática. \n- Workflows básicos entre herramientas. \n- Caso de estudio: AyudaPatagonia.ar y consideraciones prácticas. \n- Ética y clima: consideraciones y discusión grupal. \n\n Evento en conjunto con la comunidad IxDF Córdoba.",
       tags: ['diseño', 'desarrollo', 'herramientas', 'MVP'],
       speakers: [
         {

@@ -58,11 +58,18 @@ export default function Home() {
             </h2>
             <div className="flex mt-8">
               <a
-                href="https://redisenar.substack.com"
-                className="inline-block bg-transparent text-white border-2 py-4 px-12 font-bold font-base tracking-widest hover:bg-white hover:text-black hover:rounded-br-3xl hover:rounded-tl-3xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
+                href="https://join.slack.com/t/redisenar/shared_invite/zt-35ekm249f-zDd39S2_m6QSaWHYJ2tH8A"
+                className="inline-block bg-white text-black border-2 py-4 px-12 font-bold font-base tracking-widest hover:rounded-br-3xl hover:rounded-tl-3xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
                 aria-label="Unirme a la comunidad de Rediseñar"
               >
-                Unirme
+                Unirme en Slack
+              </a>
+              <a
+                href="https://redisenar.substack.com"
+                className="inline-block bg-transparent text-white border-2 py-4 px-12 ml-4 font-bold font-base tracking-widest hover:bg-white hover:text-black hover:rounded-br-3xl hover:rounded-tl-3xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
+                aria-label="Unirme a la comunidad de Rediseñar"
+              >
+                Ir al blog
               </a>
             </div>
           </div>

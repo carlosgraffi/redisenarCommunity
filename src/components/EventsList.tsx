@@ -61,6 +61,12 @@ const EventCard = ({ event }: { event: Event }) => {
                       </a>
                     ) : (
                       event.location
+                    ) : (
+                    {event.type === 'past' ? (
+                      <>
+                        <Globe size={14} className="text-gray-400" />
+                        Online
+                      </>
                     )}
                   </>
                 )}
@@ -107,13 +113,13 @@ const EventCard = ({ event }: { event: Event }) => {
 
           {!event.date && (
             <a 
-              href="https://redisenar.substack.com"
+              href="https://tally.so/r/wgklJ1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-transparent text-white border-2 py-3 px-6 font-bold text-sm tracking-wider hover:bg-white hover:text-black hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
               aria-label="Completar formulario para ser notificado sobre este evento"
             >
-              Quiero que me avisen
+              Me interesa participar
             </a>
           )}
         </div>
@@ -140,7 +146,7 @@ export default function EventsList({ showAll = false, limit = 3 }: EventsListPro
 
   return (
     <section 
-      className={showAll ? "" : "py-16 md:py-24 lg:py-32"}
+      className={showAll ? "" : ""}
       aria-labelledby={showAll ? undefined : "events-list-title"}
     >
       {!showAll && (

@@ -13,7 +13,7 @@ const config: Config = {
         rethink: ['var(--font-rethink)', 'sans-serif'],
       },
       colors: {
-        background: '#1A1A1A',
+        background: '#1A1A1A'
       }
     },
   },
