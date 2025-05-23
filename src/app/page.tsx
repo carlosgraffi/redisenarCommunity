@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import BlogSection from "@/components/BlogSection";
 import InitiativesSection from "@/components/InitiativesSection";
 import ScrollToTop from "@/components/ScrollToTop";
-import { Instagram, BookOpen, Mail } from "lucide-react";
+import { Instagram, BookOpen, Mail, Slack } from "lucide-react";
 import EventsSection from "@/components/EventsSection";
 
 export default function Home() {
@@ -22,21 +22,32 @@ export default function Home() {
             </h1>
             <p className="text-lg md:text-xl leading-relaxed mb-8">
               <span className="font-bold">Rediseñar </span>
-              es una comunidad dedicada a explorar la intersección
-              entre diseño, clima, tecnología y sociedad, desde un enfoque humanista, responsable y sostenible. Creemos en:
+              es una comunidad dedicada a explorar la intersección entre diseño,
+              clima, tecnología y sociedad, desde un enfoque humanista,
+              responsable y sostenible. Creemos en:
             </p>
             <ul className="space-y-6 list-none pl-0">
               <li className="text-lg md:text-xl leading-relaxed flex items-start">
                 <span className="text-xl mr-3 text-gray-400">✦</span>
-                <span>El diseño como una herramienta de transformación social. Rediseñar las formas y lo que nos rodea, como un acto de rebeldía creativa e intelectual.</span>
+                <span>
+                  El diseño como una herramienta de transformación social.
+                  Rediseñar las formas y lo que nos rodea, como un acto de
+                  rebeldía creativa e intelectual.
+                </span>
               </li>
               <li className="text-lg md:text-xl leading-relaxed flex items-start">
                 <span className="text-xl mr-3 text-gray-400">✦</span>
-                <span>El rol de los diseñadores como agentes de cambio, capaces de intervenir en la realidad de las personas y el mundo.</span>
+                <span>
+                  El rol de los diseñadores como agentes de cambio, capaces de
+                  intervenir en la realidad de las personas y el mundo.
+                </span>
               </li>
               <li className="text-lg md:text-xl leading-relaxed flex items-start">
                 <span className="text-xl mr-3 text-gray-400">✦</span>
-                <span>El encuentro en comunidad como medio vital y catalizador de nuestra especie para generar cambio perdurable y memorable.</span>
+                <span>
+                  El encuentro en comunidad como medio vital y catalizador de
+                  nuestra especie para generar cambio perdurable y memorable.
+                </span>
               </li>
             </ul>
           </div>
@@ -56,18 +67,20 @@ export default function Home() {
               que <span className="text-white">cambia</span> la forma de ver y
               vivir <span className="text-white">el mundo</span>.
             </h2>
-            <div className="flex mt-8">
-              <a
-                href="https://join.slack.com/t/redisenar/shared_invite/zt-35ekm249f-zDd39S2_m6QSaWHYJ2tH8A"
-                className="inline-block bg-white text-black border-2 py-4 px-12 font-bold font-base tracking-widest hover:rounded-br-3xl hover:rounded-tl-3xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
-                aria-label="Unirme a la comunidad de Rediseñar"
-              >
-                Unirme en Slack
-              </a>
+            <div className="flex  mt-8">
+              <div className="flex gap-2 bg-white text-black border-2 py-4 px-12 font-bold font-base tracking-widest hover:rounded-br-3xl hover:rounded-tl-3xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50">
+                <Slack></Slack>
+                <a
+                  href="https://join.slack.com/t/redisenar/shared_invite/zt-35ekm249f-zDd39S2_m6QSaWHYJ2tH8A"
+                  aria-label="Unirme a la comunidad en Slack de Rediseñar"
+                >
+                  Unirme
+                </a>
+              </div>
               <a
                 href="https://redisenar.substack.com"
                 className="inline-block bg-transparent text-white border-2 py-4 px-12 ml-4 font-bold font-base tracking-widest hover:bg-white hover:text-black hover:rounded-br-3xl hover:rounded-tl-3xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
-                aria-label="Unirme a la comunidad de Rediseñar"
+                aria-label="Ir al blog de Rediseñar"
               >
                 Ir al blog
               </a>

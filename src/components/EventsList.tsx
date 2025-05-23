@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, Globe } from 'lucide-react';
+import { MapPin, Calendar, Globe, CalendarCheck } from 'lucide-react';
 import Link from 'next/link';
 import { getEvents, Event } from '@/lib/events';
 
@@ -12,8 +12,9 @@ interface EventsListProps {
 
 const EventCard = ({ event }: { event: Event }) => {
   // Format date
-  const formatDate = (dateString: string | null) => {
+  const formatDate = (dateString: string | null | "past") => {
     if (!dateString) return "Próximamente";
+    if (dateString === "past") return "Evento pasado";
 
     const options: Intl.DateTimeFormatOptions = { 
       year: 'numeric', 
@@ -41,10 +42,15 @@ const EventCard = ({ event }: { event: Event }) => {
             </span>
             {event.type && (
               <span className="inline-flex items-center gap-1 text-sm bg-gray-800 text-gray-300 px-3 py-1 rounded-full">
-                {event.type === 'online' || event.type === 'past' ? (
+                {event.type === 'online' ? (
                   <>
                     <Globe size={14} className="text-gray-400" />
                     Online
+                  </>
+                ) : event.type === 'past' ? (
+                  <>
+                    <CalendarCheck size={14} className="text-gray-400" />
+                    Pasado
                   </>
                 ) : (
                   <>
@@ -62,8 +68,6 @@ const EventCard = ({ event }: { event: Event }) => {
                     ) : (
                       event.location
                     )}
-                  </>
-                )}
                   </>
                 )}
               </span>

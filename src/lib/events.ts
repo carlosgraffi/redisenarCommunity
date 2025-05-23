@@ -4,7 +4,7 @@ export interface Event {
   id: string;
   slug: string;
   title: string;
-  date: string | null; // null for "coming soon"
+  date: string | null | "past"; // null for "coming soon"
   type: 'online' | 'in-person'| 'past' | null;
   location: string | null; // null if online, otherwise location name
   locationUrl?: string; // URL to Google Maps or other address link
@@ -32,8 +32,8 @@ export interface Event {
       id: '1',
       slug: 'disenar-y-construir',
       title: "Intro: Diseñar y Construir - Diseño + AI",
-      date: "04/03/2025", // coming soon
-      type: "past",
+      date: "past", // coming soon
+      type: "online",
       location: "A definir",
       price: "Gratis", // Free for this event
       registrationUrl: "https://calendar.app.google/hWBZzVPMmPqgSonc8",
