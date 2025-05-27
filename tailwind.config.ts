@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         tostada: ['var(--font-tostada)'],
+        thunder: ['var(--font-thunder)'],
         rethink: ['var(--font-rethink)', 'sans-serif'],
       },
       colors: {

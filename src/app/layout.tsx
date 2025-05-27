@@ -11,6 +11,12 @@ const tostada = localFont({
   display: 'swap',
 });
 
+const thunder = localFont({
+  src: '../../public/fonts/Thunder-HC.ttf',
+  variable: '--font-tostada',
+  display: 'swap',
+});
+
 const rethink = localFont({
   src: '../../public/fonts/RethinkSans-Regular.ttf',
   variable: '--font-rethink',
