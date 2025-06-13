@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html 
       lang="es" 
-      className={`${thunder.variable} ${rethink.variable}`} 
+      className={`${thunder.variable} ${thunderFine.variable} ${rethink.variable}`} 
       suppressHydrationWarning
     >
       <head>
