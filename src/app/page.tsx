@@ -67,7 +67,7 @@ export default function Home() {
           <div className="max-w-2xl mx-auto py-36 text-center items-left border-y-2 border-gray-700">
             <h2
               id="design-vision-heading"
-              className="mx-auto font-thunder-fine text-[6rem] text-left text-gray-500 font-extrabold tracking-normal leading-[0.9em] uppercase md:text-md break-word hyphens-auto"
+              className="mx-auto font-thunder text-[6rem] text-left text-gray-500 font-extrabold tracking-normal leading-[0.9em] uppercase md:text-md break-word hyphens-auto"
             >
               <span className="text-white">El diseño</span> provocador, rebelde y creativo, {" "}
               <span className="text-white">cambia</span> la forma de ver y vivir{" "}
