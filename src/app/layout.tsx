@@ -4,16 +4,15 @@ import localFont from 'next/font/local';
 import './globals.css';
 import QueryProvider from '@/components/QueryProvider';
 
-
-const tostada = localFont({
-  src: '../../public/fonts/TOSTADA.ttf',
-  variable: '--font-tostada',
+const thunder = localFont({
+  src: '../../public/fonts/right-grotesk/RightGrotesk-Black.otf',
+  variable: '--font-thunder',
   display: 'swap',
 });
 
-const thunder = localFont({
-  src: '../../public/fonts/Thunder-HC.ttf',
-  variable: '--font-tostada',
+const thunderFine = localFont({
+  src: '../../public/fonts/right-grotesk/RightGrotesk-MediumItalic.otf', 
+  variable: '--font-thunder-fine',
   display: 'swap',
 });
 
@@ -56,7 +55,7 @@ export default function RootLayout({
   return (
     <html 
       lang="es" 
-      className={`${tostada.variable} ${rethink.variable}`} 
+      className={`${thunder.variable} ${rethink.variable}`} 
       suppressHydrationWarning
     >
       <head>

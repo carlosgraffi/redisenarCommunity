@@ -38,7 +38,7 @@ export default function EventsPage() {
               <ArrowLeft size={16} className="mr-2" />
               Volver al inicio
             </Link>
-            <h1 className="text-5xl md:text-6xl font-tostada mb-8">
+            <h1 className="text-5xl md:text-6xl font-thunder mb-8">
               Eventos & Workshops
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
@@ -54,7 +54,7 @@ export default function EventsPage() {
         {/* Register Interest Section */}
         <section className="py-16 md:py-24 lg:py-32" aria-labelledby="register-interest-heading">
           <div className="max-w-2xl mx-auto py-12 text-center border-t border-b border-gray-700">
-            <h2 id="register-interest-heading" className="text-3xl md:text-3xl font-tostada mb-6">
+            <h2 id="register-interest-heading" className="text-3xl md:text-3xl font-thunder mb-6">
               Futuros eventos
             </h2>
             <p className="text-lg text-gray-300 mb-8">

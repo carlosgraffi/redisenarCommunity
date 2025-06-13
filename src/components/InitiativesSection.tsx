@@ -12,7 +12,7 @@ interface Initiative {
 
 const initiatives: Initiative[] = [
   {
-    title: "Ayuda Patagonia.ar",
+    title: "AyudaPatagonia.ar",
     author: "Carlos O. Graffi",
     description: "Proyecto abierto y gratuito que unifica, valida e informa sobre las campañas de donación y fuentes de noticias verificadas para ayudar a las organizaciones, familias y comunidades afectadas por los incendios en la Patagonia Argentina.",
     url: "https://ayudapatagonia.ar"
@@ -22,7 +22,7 @@ const initiatives: Initiative[] = [
 const InitiativeCard = ({ initiative }: { initiative: Initiative }) => {
   const content = (
     <div className="flex flex-col gap-4 group ">
-      <h3 className="text-5xl font-tostada transition-transform duration-300 group-hover:-translate-x-2 py-2 break-word">
+      <h3 className="text-5xl font-thunder font-bold leading-[1em] transition-transform duration-300 group-hover:-translate-x-2 pt-2 break-word">
         {initiative.title}
       </h3>
       <div className="space-y-2">

@@ -6,7 +6,7 @@
               <div className="min-h-screen">
                 <Topbar />
                 <main className="mx-4 md:mx-8 lg:mx-[8rem] flex flex-col items-center justify-center min-h-[80vh]">
-                  <h1 className="text-6xl md:text-8xl font-tostada mb-8">404</h1>
+                  <h1 className="text-6xl md:text-8xl font-thunder mb-8">404</h1>
                   <h2 className="text-2xl md:text-3xl mb-8 text-center">
                     No pudimos encontrar el evento que estás buscando
                   </h2>

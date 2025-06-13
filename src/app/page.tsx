@@ -49,6 +49,12 @@ export default function Home() {
                   nuestra especie para generar cambio perdurable y memorable.
                 </span>
               </li>
+              <li className="text-lg font-bold text-white md:text-xl leading-relaxed flex items-start">
+                <span className="text-xl mr-3 text-gray-400">✦</span>
+                <span>
+                  Rediseñar el presente para poder imaginar un futuro.
+                </span>
+              </li>
             </ul>
           </div>
         </section>
@@ -58,14 +64,14 @@ export default function Home() {
           className="mx-auto py-16 md:py-24 lg:py-32"
           aria-labelledby="design-vision-heading"
         >
-          <div className="max-w-xl mx-auto py-36 text-center items-left border-y-2 border-gray-700">
+          <div className="max-w-2xl mx-auto py-36 text-center items-left border-y-2 border-gray-700">
             <h2
               id="design-vision-heading"
-              className="mx-auto font-tostada text-6xl text-left text-gray-500 tracking-tight md:text-md break-words hyphens-auto"
+              className="mx-auto font-thunder-fine text-[6rem] text-left text-gray-500 font-extrabold tracking-normal leading-[0.9em] uppercase md:text-md break-word hyphens-auto"
             >
-              <span className="text-white">El diseño</span> es una herramienta
-              que <span className="text-white">cambia</span> la forma de ver y
-              vivir <span className="text-white">el mundo</span>.
+              <span className="text-white">El diseño</span> provocador, rebelde y creativo, {" "}
+              <span className="text-white">cambia</span> la forma de ver y vivir{" "}
+              <span className="text-white">el mundo</span>.
             </h2>
             <div className="flex  mt-8">
               <div className="flex gap-2 bg-white text-black border-2 py-4 px-12 font-bold font-base tracking-widest hover:rounded-br-3xl hover:rounded-tl-3xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50">
@@ -168,6 +174,11 @@ export default function Home() {
           </nav>
         </section>
       </main>
+      <div className="max-w-screen overflow-x-hidden">
+        <div className="w-screen pt-8 text-center font-thunder font-extrabold text-white text-[24vw] leading-none uppercase">
+          (re)diseñar
+        </div>
+      </div>
       <ScrollToTop />
     </div>
   );

@@ -11,10 +11,10 @@ export default function Topbar() {
       <div className="container mx-auto px-4 py-3 flex justify-center items-center">
         <Link 
           href="/"
-          className="font-tostada text-xl hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg px-2"
+          className="font-thunder uppercase text-2xl hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg px-2"
           aria-label="rediseñar - Ir al inicio"
         >
-          <h1>rediseñar</h1>
+          <h1>(re)</h1>
         </Link>
       </div>
     </header>

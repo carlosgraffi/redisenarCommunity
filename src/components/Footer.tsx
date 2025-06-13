@@ -28,8 +28,10 @@ export default function Footer() {
       role="contentinfo"
       aria-label="Información de contacto y redes sociales"
     >
+      
       <h2 className="text-xl font-rethink text-center mb-16">Contacto</h2>
       <div className="max-w-xl mx-auto">
+        <h2 className="font-thunder text-6xl mb-16">REDISEÑAR</h2>
         <nav aria-label="Redes sociales">
           <ul className="flex justify-center space-x-8">
             {socialLinks.map((link) => (
