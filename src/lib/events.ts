@@ -1,105 +1,136 @@
-// src/lib/events.ts
 
-export interface Event {
+// src/lib/projects.ts
+
+export interface Project {
   id: string;
   slug: string;
   title: string;
-  date: string | null | "past"; // null for "coming soon"
-  type: 'online' | 'in-person'| 'past' | null;
-  location: string | null; // null if online, otherwise location name
-  locationUrl?: string; // URL to Google Maps or other address link
+  year: string;
+  type: 'climate-tech' | 'ai-tools' | 'community' | 'product-design';
+  organization: string;
   description: string;
   longDescription?: string;
   duration?: string;
-  capacity?: number;
-  price?: string; // Can be any text like "Gratis" or "$9,99"
-  registrationUrl?: string | null;
+  impact?: string;
+  technologies?: string[];
+  projectUrl?: string | null;
   imageUrl?: string | null;
   tags?: string[];
-  speakers?: {
-    name: string;
-    bio?: string;
-    imageUrl?: string;
-    website?: string; // Personal or company website
-    linkedin?: string; // LinkedIn profile URL
-  }[];
+  role: string;
+  outcomes?: string[];
 }
 
-// Sample events data
-// In a real application, this could come from a CMS, API, or database
-  const events: Event[] = [
-    {
-      id: '1',
-      slug: 'disenar-y-construir',
-      title: "Intro: Diseñar y Construir - Diseño + AI",
-      date: "past", // coming soon
-      type: "online",
-      location: "A definir",
-      price: "Gratis", // Free for this event
-      registrationUrl: "https://calendar.app.google/hWBZzVPMmPqgSonc8",
-      description: "Aprendé las bases para desarrollar un MVP funcional en horas –o hasta minutos. En este conversatorio la idea es que entres sin nada y te vayas sabiendo lo básico para diseñar y construir al mismo tiempo, aunque no sepas mucho de código.",
-      longDescription: "Vamos a explorar herramientas low-code, IDEs, generadores de interfaz y cómo desde el diseño también podemos construir y salir a testear un proyecto de manera autónoma.\n\nEn este taller práctico, vamos a ver:\n- Herramientas como Replit, Claude, v0 y su workflow con Figma. \n- Qué hace falta saber –y qué no. \n- Tips y prompts claves. \n- Cómo intervenir el diseño en el código. \n- Para qué nos sirve construir diseño de esta manera. \n- El caso de estudio de AyudaPatagonia.ar (+ te llevás el código). \n\nAgenda: \n- Introducción a la temática. \n- Workflows básicos entre herramientas. \n- Caso de estudio: AyudaPatagonia.ar y consideraciones prácticas. \n- Ética y clima: consideraciones y discusión grupal. \n\n Evento en conjunto con la comunidad IxDF Córdoba.",
-      tags: ['diseño', 'desarrollo', 'herramientas', 'MVP'],
-      speakers: [
-        {
-          name: 'Carlos O. Graffi',
-          bio: 'Product Design Lead en Open Earth Foundation. Escribo sobre diseño, tecnología y clima en Rediseñar. Local Leader de Interaction Design Foundation (IxDF) Córdoba',
-          website: 'https://redisenar.substack.com',
-          linkedin: 'https://linkedin.com/in/carlosgraffi'
-        }
-      ]
-    },
-  /*{
-    id: '2',
-    slug: 'clima-y-diseno-responsable',
-    title: "Clima y Diseño Responsable",
-    date: '2025-05-15',
-    type: "online",
-    location: null,
-    description: "Un workshop interactivo sobre cómo integrar consideraciones climáticas y ambientales en el proceso de diseño.",
-    longDescription: "El cambio climático es uno de los mayores desafíos de nuestro tiempo, y como diseñadores, tenemos una responsabilidad única. Este workshop interactivo te mostrará cómo integrar consideraciones climáticas y ambientales en cada etapa del proceso de diseño.\n\nA través de casos prácticos y ejercicios colaborativos, exploraremos metodologías para reducir el impacto ambiental de nuestros diseños digitales y físicos. Desde la optimización web hasta la selección de materiales, aprenderás estrategias concretas para un diseño más sostenible.\n\nEste evento es ideal para diseñadores de todos los niveles que quieran expandir su comprensión del diseño responsable en el contexto de la emergencia climática.",
-    duration: '2 horas',
-    capacity: 50,
-    registrationUrl: 'https://tally.so/r/woPYlN',
-    tags: ['clima', 'sostenibilidad', 'diseño responsable'],
-    speakers: [
-      {
-        name: 'Ana Martínez',
-        bio: 'Especialista en diseño sostenible y políticas ambientales aplicadas al diseño.',
-      }
+// Portfolio projects data based on Carlos Graffi's experience
+const projects: Project[] = [
+  {
+    id: '1',
+    slug: 'citycatalyst',
+    title: "CityCatalyst: GHG Inventory Platform",
+    year: "2022-2024",
+    type: "climate-tech",
+    organization: "Open Earth Foundation",
+    role: "Product Design Lead",
+    description: "A web platform that reduces the time to create a greenhouse gas inventory from months to seconds, helping cities worldwide track and reduce their emissions.",
+    longDescription: "CityCatalyst transforms how cities approach climate action by making greenhouse gas inventory creation accessible and fast. This platform translates complex technical frameworks like the Global Protocol for Community-Scale GHG Emissions into intuitive user flows that city officials can navigate with confidence.\n\nThe challenge was designing for a diverse global audience of city government staff, many with limited technical expertise, who needed to create accurate emissions inventories quickly.\n\nKey design decisions:\n- Simplified complex data input flows into guided step-by-step processes\n- Created visual data validation to help users identify and correct errors\n- Designed responsive dashboards that work across different devices and internet speeds\n- Built modular components that adapt to different city contexts and data availability\n\nThe platform now serves over 50 cities across Latin America, dramatically reducing the barrier to climate action planning.",
+    duration: "2+ years",
+    impact: "50+ cities using the platform",
+    technologies: ['React', 'TypeScript', 'Data Visualization', 'API Design'],
+    projectUrl: "https://citycatalyst.openearth.org",
+    tags: ['climate', 'cities', 'data-visualization', 'product-design'],
+    outcomes: [
+      "Reduced GHG inventory creation time from months to seconds",
+      "50+ cities across Latin America using the platform",
+      "Open-source tool enabling global climate action"
     ]
-  }*/
+  },
+  {
+    id: '2',
+    slug: 'climate-ai-tools',
+    title: "Climate AI Tools Suite",
+    year: "2025",
+    type: "ai-tools",
+    organization: "Open Earth Foundation",
+    role: "Head of Impact",
+    description: "Five AI-powered tools that combine climate data with machine learning to help cities prioritize climate actions, assess risks, and generate comprehensive climate profiles.",
+    longDescription: "In 2025, I launched five public tools that integrate AI workflows with climate data, designed to make climate governance more accessible and actionable.\n\nEach tool addresses a specific need in climate action planning:\n- GHG inventory generators that automate data collection and calculation\n- Action ranking models that help cities prioritize interventions based on impact and feasibility\n- Risk assessment tools that identify climate vulnerabilities\n- City climate profile generators that create comprehensive overviews\n- Meeting optimization tools using calendar data and LLMs\n\nDesign approach:\n- Treated AI as a collaborative partner, not magic\n- Designed interactions that stay grounded in user intent\n- Created interfaces that make complex algorithms understandable\n- Ensured outputs remained actionable for climate governance contexts\n- Built rapid prototyping workflows using Replit for fast iteration\n\nThese tools demonstrate how AI can amplify human decision-making in climate action without replacing the critical thinking needed for effective governance.",
+    duration: "6 months",
+    impact: "5 public tools launched",
+    technologies: ['AI/LLM Integration', 'Replit', 'Climate Data APIs', 'Rapid Prototyping'],
+    projectUrl: "https://openearth.org",
+    tags: ['ai', 'climate', 'tools', 'prototyping'],
+    outcomes: [
+      "5 AI-powered climate tools launched in 6 months",
+      "Rapid prototyping workflow established",
+      "AI integration methodology for climate governance"
+    ]
+  },
+  {
+    id: '3',
+    slug: 'redisenar-community',
+    title: "Rediseñar: Design Community & Publication",
+    year: "2024-Present",
+    type: "community",
+    organization: "Independent",
+    role: "Founder & Editor",
+    description: "A growing community and publication exploring how everything is designed and how we can design it better. Connects designers, technologists, and citizens who want to challenge how the world works.",
+    longDescription: "Rediseñar started as an exploration of how design shapes everything around us—from waste systems to narratives, from digital products to policy. It's grown into a community platform that challenges conventional thinking about design's role in society.\n\nThe project combines:\n- A newsletter publication with essays about design's impact on consumption, silence, and action\n- Community meetups and creative interventions in Córdoba, Argentina\n- A platform for connecting designers, technologists, and citizens\n- Educational content about design thinking and climate action\n\nDesign philosophy:\n- Everything is designed, so everything can be redesigned\n- Design should create space for new solutions, not just optimize existing ones\n- Community building through shared exploration and experimentation\n- Open dialogue about design's responsibility in addressing global challenges\n\nThe community grew organically to over 600 followers and 80+ newsletter subscribers in its first months, demonstrating hunger for design discourse that goes beyond aesthetics to address systemic challenges.",
+    duration: "Ongoing since 2024",
+    impact: "600+ followers, 80+ subscribers",
+    technologies: ['Community Building', 'Content Strategy', 'Newsletter Platform', 'Event Organization'],
+    projectUrl: "https://redisenar.substack.com",
+    tags: ['community', 'publication', 'design-thinking', 'climate'],
+    outcomes: [
+      "600+ community members in first months",
+      "80+ newsletter subscribers organically",
+      "Regular meetups and interventions in Córdoba",
+      "Platform for design discourse and climate action"
+    ]
+  },
+  {
+    id: '4',
+    slug: 'climate-action-tools',
+    title: "Climate Action Prioritization Tools",
+    year: "2022-2024",
+    type: "climate-tech",
+    organization: "Open Earth Foundation",
+    role: "Product Design Lead",
+    description: "Design and development of tools that help cities prioritize climate actions and assess risks, serving over 50 cities across Latin America with data-driven climate governance.",
+    longDescription: "Beyond greenhouse gas inventories, cities need to prioritize which climate actions to implement first. I designed a suite of tools that help city governments make these critical decisions based on data, local context, and available resources.\n\nKey challenges addressed:\n- Translating complex climate science into actionable insights\n- Designing for diverse city contexts and resource constraints\n- Creating interfaces that build confidence in data-driven decisions\n- Balancing comprehensive analysis with usable simplicity\n\nThe tools include:\n- Risk assessment frameworks that identify climate vulnerabilities\n- Action prioritization matrices that consider impact, cost, and feasibility\n- Resource planning interfaces that help cities allocate limited budgets\n- Progress tracking dashboards that monitor implementation\n\nDesign process involved extensive collaboration with city governments, NGOs, and climate scientists to ensure the tools met real-world needs while remaining scientifically accurate.",
+    duration: "2+ years",
+    impact: "50+ cities across Latin America",
+    technologies: ['Data Visualization', 'Decision Support Systems', 'Multi-stakeholder Design', 'Climate Science'],
+    projectUrl: "https://openearth.org",
+    tags: ['climate', 'cities', 'decision-support', 'collaboration'],
+    outcomes: [
+      "50+ cities using prioritization tools",
+      "Improved climate action planning efficiency",
+      "Data-driven decision making for climate governance",
+      "Collaborative design methodology established"
+    ]
+  }
 ];
 
-// Get all events
-export function getEvents(): Event[] {
-  return events;
+// Get all projects
+export function getProjects(): Project[] {
+  return projects;
 }
 
-// Get event by slug
-export function getEventBySlug(slug: string): Event | undefined {
-  return events.find(event => event.slug === slug);
+// Get project by slug
+export function getProjectBySlug(slug: string): Project | undefined {
+  return projects.find(project => project.slug === slug);
 }
 
-// Get all event slugs (useful for static generation)
-export function getAllEventSlugs(): string[] {
-  return events.map(event => event.slug);
+// Get all project slugs (useful for static generation)
+export function getAllProjectSlugs(): string[] {
+  return projects.map(project => project.slug);
 }
 
-// Get featured events (could be based on certain criteria)
-export function getFeaturedEvents(): Event[] {
-  return events.filter(event => event.date !== null).slice(0, 3);
+// Get featured projects
+export function getFeaturedProjects(): Project[] {
+  return projects.slice(0, 3);
 }
 
-// Get upcoming events (those with dates in the future)
-export function getUpcomingEvents(): Event[] {
-  const now = new Date();
-  return events
-    .filter(event => event.date !== null && new Date(event.date) > now)
-    .sort((a, b) => {
-      // Handle null dates (put them at the end)
-      if (!a.date) return 1;
-      if (!b.date) return -1;
-      return new Date(a.date).getTime() - new Date(b.date).getTime();
-    });
+// Get projects by type
+export function getProjectsByType(type: Project['type']): Project[] {
+  return projects.filter(project => project.type === type);
 }

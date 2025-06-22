@@ -5,7 +5,7 @@ import BlogSection from "@/components/BlogSection";
 import InitiativesSection from "@/components/InitiativesSection";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Instagram, BookOpen, Mail, Slack } from "lucide-react";
-import EventsSection from "@/components/EventsSection";
+import ProjectsSection from "@/components/ProjectsSection";
 
 export default function Home() {
   return (
@@ -14,89 +14,76 @@ export default function Home() {
       <main className="mx-4 md:mx-8 lg:mx-[8rem]">
         <Header />
 
-        {/* Introduction Section */}
-        <section className="py-16 md:py-24 lg:py-32" aria-label="Introducción">
-          <div className="max-w-xl mx-auto text-left text-gray-300">
-            <h1 className="text-sm mx-auto pb-8 text-gray-500 font-regular leading-tight tracking-widest">
-              MANIFIESTO
-            </h1>
-            <p className="text-lg md:text-xl leading-relaxed mb-8">
-              <span className="font-bold">Rediseñar </span>
-              es una comunidad dedicada a explorar la intersección entre diseño,
-              clima, tecnología y sociedad, desde un enfoque humanista,
-              responsable y sostenible. Creemos en:
-            </p>
-            <ul className="space-y-6 list-none pl-0">
-              <li className="text-lg md:text-xl leading-relaxed flex items-start">
-                <span className="text-xl mr-3 text-gray-400">✦</span>
-                <span>
-                  El diseño como una herramienta de transformación social.
-                  Rediseñar las formas y lo que nos rodea, como un acto de
-                  rebeldía creativa e intelectual.
-                </span>
-              </li>
-              <li className="text-lg md:text-xl leading-relaxed flex items-start">
-                <span className="text-xl mr-3 text-gray-400">✦</span>
-                <span>
-                  El rol de los diseñadores como agentes de cambio, capaces de
-                  intervenir en la realidad de las personas y el mundo.
-                </span>
-              </li>
-              <li className="text-lg md:text-xl leading-relaxed flex items-start">
-                <span className="text-xl mr-3 text-gray-400">✦</span>
-                <span>
-                  El encuentro en comunidad como medio vital y catalizador de
-                  nuestra especie para generar cambio perdurable y memorable.
-                </span>
-              </li>
-              <li className="text-lg font-bold text-white md:text-xl leading-relaxed flex items-start">
-                <span className="text-xl mr-3 text-gray-400">✦</span>
-                <span>
-                  Rediseñar el presente para poder imaginar un futuro.
-                </span>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Vision Section */}
-        <section
-          className="mx-auto py-16 md:py-24 lg:py-32"
-          aria-labelledby="design-vision-heading"
-        >
-          <div className="max-w-2xl mx-auto py-36 text-center items-left border-y-2 border-gray-700">
-            <h2
-              id="design-vision-heading"
-              className="mx-auto font-thunder text-[3rem] text-left text-gray-500 tracking-normal uppercase antialiased leading-[0.8em] md:text-md break-word hyphens-auto"
-            >
-              <span className="text-white">El diseño</span> es una herramienta que {" "}
-              <span className="text-white">cambia</span> la forma de mirar y vivir{" "}
-              <span className="text-white">el mundo</span>.
+        {/* About Section */}
+        <section className="py-16 md:py-24 lg:py-32" aria-labelledby="about-title">
+          <div className="max-w-3xl mx-auto">
+            <h2 id="about-title" className="text-4xl md:text-5xl font-thunder mb-8">
+              About Me
             </h2>
-            <div className="flex mt-8 flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-              <div className="flex gap-2 items-center justify-center bg-white text-black border-2 py-4 px-12 font-bold font-base tracking-widest hover:rounded-br-3xl hover:rounded-tl-3xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50">
-                <Slack></Slack>
-                <a
-                  href="https://join.slack.com/t/redisenar/shared_invite/zt-35ekm249f-zDd39S2_m6QSaWHYJ2tH8A"
-                  aria-label="Unirme a la comunidad en Slack de Rediseñar"
-                >
-                  Unirme
-                </a>
+            <div className="prose prose-lg prose-invert max-w-none">
+              <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                I'm Carlos Graffi — a designer who builds things with a purpose.
+              </p>
+              <p className="text-base text-gray-300 leading-relaxed mb-6">
+                Over the last 10+ years, I've designed, led, and launched products at the intersection of design, technology, and climate action. My background is in graphic and product design, but I've never drawn a line between thinking and making. I sketch, code, test, and iterate. I work with frontend components when needed, but I don't consider myself a frontend developer. I'm a maker — someone who learns what's needed to bring an idea to life.
+              </p>
+              <p className="text-base text-gray-300 leading-relaxed mb-6">
+                Since 2022, I've been leading product design at the Open Earth Foundation, developing open-source digital tools to accelerate climate action. In 2024, I became Head of Impact, ensuring our tools contribute to real-world emissions reductions and climate strategy implementation across 50+ cities in Latin America.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-gray-700">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">10+</div>
+                  <div className="text-sm text-gray-400">Years designing</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">50+</div>
+                  <div className="text-sm text-gray-400">Cities served</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">5</div>
+                  <div className="text-sm text-gray-400">AI tools launched</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">1,000+</div>
+                  <div className="text-sm text-gray-400">Students mentored</div>
+                </div>
               </div>
-              <a
-                href="https://redisenar.substack.com"
-                className="inline-block bg-transparent text-white border-2 py-4 px-12 font-bold font-base tracking-widest hover:bg-white hover:text-black hover:rounded-br-3xl hover:rounded-tl-3xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
-                aria-label="Ir al blog de Rediseñar"
-              >
-                Ir al blog
-              </a>
             </div>
           </div>
         </section>
 
+        <ProjectsSection />
         <BlogSection />
-        <InitiativesSection />
-        <EventsSection />
+
+        {/* Contact Section */}
+        <section className="py-16 md:py-24 lg:py-32 border-t border-gray-700" aria-labelledby="contact-title">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 id="contact-title" className="text-3xl md:text-4xl font-thunder mb-6">
+              Let's Work Together
+            </h2>
+            <p className="text-lg text-gray-300 mb-8">
+              Interested in collaborating on climate tech, AI tools, or design projects? Let's connect.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="mailto:carlos@redisenar.com"
+                className="inline-block bg-white text-black border-2 py-3 px-6 font-bold text-sm tracking-wider hover:bg-white hover:text-black hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
+                aria-label="Send email to Carlos"
+              >
+                Get in Touch
+              </a>
+              <a
+                href="https://linkedin.com/in/carlosgraffi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-transparent text-white border-2 py-3 px-6 font-bold text-sm tracking-wider hover:bg-white hover:text-black hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
+                aria-label="View LinkedIn profile"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </section>
 
         {/* Carbon Info Section */}
         <section
@@ -106,79 +93,25 @@ export default function Home() {
           <div className="py-12 text-gray-400 max-w-sm text-center text-sm">
             <p className="block pb-4 tracking-widest text-xl">~0.05g de CO2</p>
             <p className="block pb-4">
-              Son generados en cada visita.
+              Generated per visit.
               <br></br>
               {""}
-              Esta página web está desarrollada con conciencia ambiental y
-              obtuvo el nivel más alto (A+) en{" "}
+              This portfolio is built with environmental consciousness and
+              achieved the highest rating (A+) on{" "}
               <a
-                href="https://www.websitecarbon.com/website/redisen-ar/"
+                href="https://www.websitecarbon.com/"
                 className="text-blue underline hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Ver informe de emisiones de carbono del sitio"
+                aria-label="View carbon emissions report"
               >
                 WebsiteCarbon
               </a>
-              , siendo más eficiente que el 95% de los sitios web a nivel
-              global.
+              , being more efficient than 95% of websites globally.
             </p>
           </div>
         </section>
-
-        {/* Contact Section */}
-        <section
-          className="py-16 md:py-24 lg:py-32"
-          aria-labelledby="contact-heading"
-        >
-          <h2
-            id="contact-heading"
-            className="text-xl text-center mb-12 md:mb-16"
-          >
-            Contacto
-          </h2>
-          <nav className="max-w-xl mx-auto" aria-label="Redes sociales">
-            <ul className="flex justify-center space-x-12">
-              <li>
-                <a
-                  href="https://www.instagram.com/redisen.ar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-75 transition-opacity inline-block p-2 focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
-                  aria-label="Seguinos en Instagram"
-                >
-                  <Instagram size={24} aria-hidden="true" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://redisenar.substack.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-75 transition-opacity inline-block p-2 focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
-                  aria-label="Lee nuestro Substack"
-                >
-                  <BookOpen size={24} aria-hidden="true" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:carlos@redisen.ar?subject=Hola, quiero ser parte de Rediseñar"
-                  className="hover:opacity-75 transition-opacity inline-block p-2 focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
-                  aria-label="Envíanos un email"
-                >
-                  <Mail size={24} aria-hidden="true" />
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </section>
       </main>
-      <div className="max-w-screen overflow-x-hidden">
-        <div className="w-screen py-8 text-center font-tostada text-white text-[16vw] leading-none">
-          rediseñar
-        </div>
-      </div>
       <ScrollToTop />
     </div>
   );
