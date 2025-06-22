@@ -12,7 +12,7 @@ export default function ProjectsSection() {
       className="py-16 md:py-24 lg:py-32"
       aria-labelledby="projects-title"
     >
-      <ProjectsList limit={3} />
+      <ProjectsList limit={4} />
 
       
     </section>

@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, ExternalLink, MapPin, Users } from 'lucide-react';
 import Link from 'next/link';
-import { getProjects, Project } from '../lib/projects';
+import { getProjects, Project } from '@/lib/projects';
 
 interface ProjectsListProps {
   showAll?: boolean;
