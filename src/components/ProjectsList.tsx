@@ -134,17 +134,7 @@ export default function ProjectsList({ showAll = false, limit = 3 }: ProjectsLis
         )}
       </div>
 
-      {!showAll && projects.length > limit && (
-        <div className="text-center mt-16">
-          <Link
-            href="/projects"
-            className="inline-flex items-center justify-center bg-transparent text-white border-2 py-3 px-8 font-bold text-sm tracking-wider hover:bg-white hover:text-black hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
-            aria-label="View all projects"
-          >
-            View All Projects
-          </Link>
-        </div>
-      )}
+      
     </section>
   );
 }

@@ -42,9 +42,9 @@ export default function ProjectsPage() {
               Projects
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              A selection of design and development projects spanning climate tech, AI tools, 
-              and community building. Each project represents a different approach to using 
-              design and technology to create positive impact.
+              Four key projects that showcase my approach to using design and technology 
+              for climate impact. From helping cities track emissions to building communities 
+              that rethink how we design everything.
             </p>
           </div>
         </section>
