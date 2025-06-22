@@ -21,7 +21,7 @@ export default function BlogPost({ title, author, description, link }: BlogPostP
 
   const content = (
     <div className="flex flex-col gap-4 group">
-      <h3 className="text-5xl pt-2 font-thunder font-bold leading-[1em] transition-transform duration-300 group-hover:-translate-x-2">
+      <h3 className="text-4xl pt-2 font-thunder font-bold leading-[1em] transition-transform duration-300 group-hover:-translate-x-2">
         {cleanTitle}
       </h3>
       <div className="space-y-2">

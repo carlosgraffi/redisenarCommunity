@@ -67,14 +67,14 @@ export default function Home() {
           <div className="max-w-2xl mx-auto py-36 text-center items-left border-y-2 border-gray-700">
             <h2
               id="design-vision-heading"
-              className="mx-auto font-thunder text-[6rem] text-left text-gray-500 font-extrabold tracking-normal leading-[0.9em] uppercase md:text-md break-word hyphens-auto"
+              className="mx-auto font-thunder text-[3rem] text-left text-gray-500 tracking-normal uppercase antialiased leading-[0.8em] md:text-md break-word hyphens-auto"
             >
-              <span className="text-white">El diseño</span> provocador, rebelde y creativo, {" "}
-              <span className="text-white">cambia</span> la forma de ver y vivir{" "}
+              <span className="text-white">El diseño</span> es una herramienta que {" "}
+              <span className="text-white">cambia</span> la forma de mirar y vivir{" "}
               <span className="text-white">el mundo</span>.
             </h2>
-            <div className="flex  mt-8">
-              <div className="flex gap-2 bg-white text-black border-2 py-4 px-12 font-bold font-base tracking-widest hover:rounded-br-3xl hover:rounded-tl-3xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50">
+            <div className="flex mt-8 flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+              <div className="flex gap-2 items-center justify-center bg-white text-black border-2 py-4 px-12 font-bold font-base tracking-widest hover:rounded-br-3xl hover:rounded-tl-3xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50">
                 <Slack></Slack>
                 <a
                   href="https://join.slack.com/t/redisenar/shared_invite/zt-35ekm249f-zDd39S2_m6QSaWHYJ2tH8A"
@@ -85,7 +85,7 @@ export default function Home() {
               </div>
               <a
                 href="https://redisenar.substack.com"
-                className="inline-block bg-transparent text-white border-2 py-4 px-12 ml-4 font-bold font-base tracking-widest hover:bg-white hover:text-black hover:rounded-br-3xl hover:rounded-tl-3xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
+                className="inline-block bg-transparent text-white border-2 py-4 px-12 font-bold font-base tracking-widest hover:bg-white hover:text-black hover:rounded-br-3xl hover:rounded-tl-3xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
                 aria-label="Ir al blog de Rediseñar"
               >
                 Ir al blog
@@ -175,8 +175,8 @@ export default function Home() {
         </section>
       </main>
       <div className="max-w-screen overflow-x-hidden">
-        <div className="w-screen pt-8 text-center font-thunder font-extrabold text-white text-[24vw] leading-none uppercase">
-          (re)diseñar
+        <div className="w-screen py-8 text-center font-tostada text-white text-[16vw] leading-none">
+          rediseñar
         </div>
       </div>
       <ScrollToTop />

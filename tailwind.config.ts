@@ -12,6 +12,7 @@ const config: Config = {
         tostada: ['var(--font-tostada)'],
         thunder: ['var(--font-thunder)'],
         thunderFine: ['var(--font-thunder-fine)'],
+        thunderLight: ['var(--font-thunder-light)'],
         rethink: ['var(--font-rethink)', 'sans-serif'],
       },
       colors: {

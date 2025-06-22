@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 interface Initiative {
   title: string;
@@ -14,22 +14,23 @@ const initiatives: Initiative[] = [
   {
     title: "AyudaPatagonia.ar",
     author: "Carlos O. Graffi",
-    description: "Proyecto abierto y gratuito que unifica, valida e informa sobre las campañas de donación y fuentes de noticias verificadas para ayudar a las organizaciones, familias y comunidades afectadas por los incendios en la Patagonia Argentina.",
-    url: "https://ayudapatagonia.ar"
-  }
+    description:
+      "Proyecto abierto y gratuito que unifica, valida e informa sobre las campañas de donación y fuentes de noticias verificadas para ayudar a las organizaciones, familias y comunidades afectadas por los incendios en la Patagonia Argentina.",
+    url: "https://ayudapatagonia.ar",
+  },
 ] as const;
 
 const InitiativeCard = ({ initiative }: { initiative: Initiative }) => {
   const content = (
     <div className="flex flex-col gap-4 group ">
-      <h3 className="text-5xl font-thunder font-bold leading-[1em] transition-transform duration-300 group-hover:-translate-x-2 pt-2 break-word">
+      <h3 className="text-4xl font-thunder font-bold leading-[1em] transition-transform duration-300 group-hover:-translate-x-2 pt-2 break-word">
         {initiative.title}
       </h3>
       <div className="space-y-2">
         <div className="text-lg font-bold transition-colors duration-300 group-hover:text-white/90">
           <span className="text-gray-300">Por</span> {initiative.author}
         </div>
-        <div 
+        <div
           className="text-base text-gray-300 transition-colors duration-300 group-hover:text-white/80"
           role="article"
         >
@@ -40,7 +41,7 @@ const InitiativeCard = ({ initiative }: { initiative: Initiative }) => {
   );
 
   return (
-    <motion.a 
+    <motion.a
       href={initiative.url}
       target="_blank"
       rel="noopener noreferrer"
@@ -58,17 +59,17 @@ const InitiativeCard = ({ initiative }: { initiative: Initiative }) => {
 
 export default function InitiativesSection() {
   return (
-    <section 
+    <section
       className="py-16 md:py-24 lg:py-32"
       aria-labelledby="initiatives-title"
     >
-      <h2 
-        id="initiatives-title" 
+      <h2
+        id="initiatives-title"
         className="text-xl mb-24 text-center sm:text-md"
       >
         Iniciativas y proyectos
       </h2>
-      <div 
+      <div
         className="space-y-24 max-w-2xl mx-auto"
         role="feed"
         aria-label="Lista de iniciativas y proyectos"

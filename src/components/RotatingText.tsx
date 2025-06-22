@@ -56,7 +56,7 @@ export default function RotatingText() {
 
   return (
     <div
-      className="inline-flex items-top whitespace-nowrap overflow-y-hidden"
+      className="inline-flex items-baseline whitespace-nowrap overflow-y-hidden"
       role="region"
       aria-label="Texto rotativo"
       onMouseEnter={() => setIsPaused(true)}
@@ -66,7 +66,7 @@ export default function RotatingText() {
       tabIndex={0}
     >
       <span
-        className="text-[4rem] uppercase md:text-[6rem] font-thunder leading-relaxed transition-all"
+        className="text-[4rem] md:text-[4rem] xs:text-[2rem] font-thunder uppercase leading-relaxed transition-all"
         aria-hidden="true"
       >
         (re)
@@ -83,7 +83,7 @@ export default function RotatingText() {
             animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
             exit={prefersReducedMotion ? {} : { opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="text-[4rem] md:text-[6rem] xs:text-[4rem] font-thunder leading-relaxed inline-block"
+            className="text-[4rem] uppercase md:text-[4rem] xs:text-[2rem] font-thunder leading-relaxed inline-block"
           >
             {words[index]}
           </motion.span>

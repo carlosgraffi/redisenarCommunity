@@ -1,0 +1,30 @@
+About Me
+
+I’m Carlos Graffi — a designer who builds things with a purpose.
+
+Over the last 10+ years, I’ve designed, led, and launched products at the intersection of design, technology, and climate action. My background is in graphic and product design, but I’ve never drawn a line between thinking and making. I sketch, code, test, and iterate. I work with frontend components when needed, but I don’t consider myself a frontend developer. I’m a maker — someone who learns what’s needed to bring an idea to life.
+
+Designing for Climate Impact
+
+Since 2022, I’ve been leading product design at the Open Earth Foundation, a non-profit developing open-source digital tools to accelerate climate action. In 2024, I became Head of Impact, taking on the challenge of not only designing usable tools but making sure they contribute to real-world emissions reductions, resilience building, and implementation of climate strategies. My work spans web platforms like CityCatalyst, which reduces the time to create a greenhouse gas inventory from months to seconds, and tools for prioritizing climate actions or assessing risks in over 50 cities across Latin America.
+
+I don’t design in isolation. I build in collaboration with city governments, NGOs, data scientists, and developers. I help translate technical frameworks like the Global Protocol for Community-Scale GHG Emissions into user flows that city officials can navigate with confidence.
+
+Building with AI and Replit
+
+I believe in working fast, openly, and with the tools that lower the barrier to experimentation. I use Replit to prototype and host working versions of tools that integrate AI, APIs, and frontend interfaces. In 2025 alone, I launched five public tools combining climate data and AI workflows — from GHG inventory generators to action ranking models and city climate profiles. I also built and tested a one-day MVP for optimizing meetings using calendar data and an LLM.
+
+I don’t see AI as magic. I treat it as a collaborator: something that helps me generate, debug, and refine. I often use it to turn raw data into insight or friction into flow. I design AI interactions that stay grounded in user intent, especially in sensitive contexts like climate governance.
+
+Rediseñar: Design, Technology & Climate
+
+In 2024, I founded Rediseñar, a growing community and publication that explores how everything is designed — and how we can design it better. From waste systems to narratives, from digital products to policy, Rediseñar connects designers, technologists, and citizens who want to challenge how the world works and make space for new solutions.
+
+In its first months, Rediseñar reached over 600 followers and 80+ newsletter subscribers organically. I write essays about how design shapes consumption, silence, and action. I also organize meetups and creative interventions in Córdoba, Argentina, where I live. It’s not a side project. It’s part of the same mission.
+
+A Few Numbers
+	•	10+ years designing products and experiences
+	•	50+ cities using tools I helped design
+	•	5 climate tools launched in the past year
+	•	1,000+ students mentored in design and tech
+	•	1 open community, Rediseñar, built from the ground up

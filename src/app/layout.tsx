@@ -1,45 +1,60 @@
 // layout.tsx
-import type { Metadata } from 'next';
-import localFont from 'next/font/local';
-import './globals.css';
-import QueryProvider from '@/components/QueryProvider';
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import "./globals.css";
+import QueryProvider from "@/components/QueryProvider";
 
 const thunder = localFont({
-  src: '../../public/fonts/right-grotesk/RightGrotesk-Black.otf',
-  variable: '--font-thunder',
-  display: 'swap',
+  src: "../../public/fonts/right-grotesk/RightGrotesk-Black.otf",
+  variable: "--font-thunder",
+  display: "swap",
 });
 
 const thunderFine = localFont({
-  src: '../../public/fonts/right-grotesk/RightGrotesk-MediumItalic.otf', 
-  variable: '--font-thunder-fine',
-  display: 'swap',
+  src: "../../public/fonts/right-grotesk/RightGrotesk-MediumItalic.otf",
+  variable: "--font-thunder-fine",
+  display: "swap",
+});
+
+const thunderLight = localFont({
+  src: "../../public/fonts/right-grotesk/RightGrotesk-Fine.otf",
+  variable: "--font-thunder-light",
+  display: "swap",
 });
 
 const rethink = localFont({
-  src: '../../public/fonts/RethinkSans-Regular.ttf',
-  variable: '--font-rethink',
-  display: 'swap',
+  src: "../../public/fonts/RethinkSans-Regular.ttf",
+  variable: "--font-rethink",
+  display: "swap",
+});
+
+const tostada = localFont({
+  src: "../../public/fonts/TOSTADA.ttf",
+  variable: "--font-tostada",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: 'Rediseñar',
-  description: 'Una comunidad de diseño dedicada a explorar la intersección entre diseño, clima, tecnología y sociedad.',
-  keywords: ['diseño', 'clima', 'tecnología', 'sociedad', 'comunidad'],
+  title: "Rediseñar",
+  description:
+    "Una comunidad de diseño dedicada a explorar la intersección entre diseño, clima, tecnología y sociedad.",
+  keywords: ["diseño", "clima", "tecnología", "sociedad", "comunidad"],
   openGraph: {
-    title: 'Rediseñar',
-    description: 'Una comunidad de diseño dedicada a explorar la intersección entre diseño, clima, tecnología y sociedad.',
-    url: 'https://redisenar.com',
-    type: 'website',
+    title: "Rediseñar",
+    description:
+      "Una comunidad de diseño dedicada a explorar la intersección entre diseño, clima, tecnología y sociedad.",
+    url: "https://redisenar.com",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Rediseñar',
-    description: 'Una comunidad de diseño dedicada a explorar la intersección entre diseño, clima, tecnología y sociedad.',
+    card: "summary_large_image",
+    title: "Rediseñar",
+    description:
+      "Una comunidad de diseño dedicada a explorar la intersección entre diseño, clima, tecnología y sociedad.",
   },
-  metadataBase: new URL('https://redisenar.com'),
+  metadataBase: new URL("https://redisenar.com"),
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   robots: {
     index: true,
@@ -53,9 +68,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html 
-      lang="es" 
-      className={`${thunder.variable} ${thunderFine.variable} ${rethink.variable}`} 
+    <html
+      lang="es"
+      className={`${thunder.variable} ${thunderFine.variable} ${thunderLight.variable} ${rethink.variable} ${tostada.variable}`} 
       suppressHydrationWarning
     >
       <head>
@@ -63,13 +78,13 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body 
-        className="bg-background text-white font-rethink" 
+      <body
+        className="bg-background text-white font-rethink"
         suppressHydrationWarning
       >
         <QueryProvider>
-          <a 
-            href="#main-content" 
+          <a
+            href="#main-content"
             className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-black focus:text-white"
           >
             Saltar al contenido principal
