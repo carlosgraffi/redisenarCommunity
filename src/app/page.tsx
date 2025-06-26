@@ -28,7 +28,7 @@ export default function Home() {
                 Over the last 10+ years, I've designed, led, and launched products at the intersection of design, technology, and (recently) climate action.
               </p>
               <p className="text-base text-gray-300 leading-relaxed mb-6">
-                My journey as a designer goes back to digitizing graffitis from my friends in Photoshop. A mindset started growing there: <span className="text-white font-semibold mr-2">find a purpose, learn how to do it.</span>
+                My journey as a designer goes back to my teenage years, digitizing old graffitis in Photoshop. Without knowing it, a mindset started growing then: <span className="text-white font-semibold mr-2">find a purpose, learn how to do it.</span>
                I became a self-taught designer. Spent a couple of years training and nurturing from different experiences. Now I effort to give something back.</p>
               <p className="text-base text-gray-300 leading-relaxed mb-6">
                 Since 2022, I've been leading product design at the Open Earth Foundation, developing open-source digital tools to accelerate climate action. In 2025, I became Head of Impact, ensuring our tools contribute to real-world emissions reductions and climate strategy implementation across 50+ cities in Latin America. 
@@ -106,7 +106,7 @@ export default function Home() {
               This portfolio is built with environmental consciousness and
               achieved the highest rating (A+) on{" "}
               <a
-                href="https://www.websitecarbon.com/"
+                href="https://www.websitecarbon.com/website/carlosgraffi-com/"
                 className="text-blue underline hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
                 target="_blank"
                 rel="noopener noreferrer"
