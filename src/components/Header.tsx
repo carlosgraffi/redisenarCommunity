@@ -57,7 +57,7 @@ export default function Header() {
             >
               Read Rediseñar
             </motion.a>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </header>
