@@ -64,7 +64,7 @@ export default function RotatingText() {
     >
       <div className="flex items-baseline">
         <span
-          className="text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-thunderLight uppercase mr-1 sm:mr-2 leading-tight transition-all"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-thunderLight uppercase mr-1 sm:mr-2 leading-tight transition-all"
           aria-hidden="true"
         >
           I
@@ -81,7 +81,7 @@ export default function RotatingText() {
               animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
               exit={prefersReducedMotion ? {} : { opacity: 0, y: -20 }}
               transition={{ duration: 0.85 }}
-              className="text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-thunder leading-tight inline-block"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-thunder leading-tight inline-block"
             >
               {words[index]}
             </motion.span>
@@ -89,7 +89,7 @@ export default function RotatingText() {
         </div>
       </div>
       <span
-        className="text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-thunderLight leading-tight transition-all"
+        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-thunderLight leading-tight transition-all"
         aria-hidden="true"
       >
         with purpose
