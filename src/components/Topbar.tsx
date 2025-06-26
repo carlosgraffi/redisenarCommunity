@@ -2,13 +2,19 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 export default function Topbar() {
+  const { t, locale, setLocale } = useTranslation();
   const [showTooltip, setShowTooltip] = useState(false);
 
   const handleLightThemeClick = () => {
     setShowTooltip(true);
     setTimeout(() => setShowTooltip(false), 5000);
+  };
+
+  const toggleLanguage = () => {
+    setLocale(locale === 'es-AR' ? 'en' : 'es-AR');
   };
 
   return (
@@ -20,7 +26,7 @@ export default function Topbar() {
         <Link 
           href="/"
           className="font-tostada text-2xl hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg px-2"
-          aria-label="rediseñar - Ir al inicio"
+          aria-label={t('nav.home')}
         >
           <h1>
             <span className="text-lg uppercase font-thunder tracking-normal">
@@ -33,10 +39,18 @@ export default function Topbar() {
           <a
             href="/projects"
             className="hover:text-white hover:underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
-            aria-label="View projects"
+            aria-label={t('nav.projects')}
           >
-            Projects
+            {t('nav.projects')}
           </a>
+          
+          <button
+            onClick={toggleLanguage}
+            className="px-3 py-1 text-sm border border-gray-600 rounded hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+            aria-label={`Switch to ${locale === 'es-AR' ? 'English' : 'Español'}`}
+          >
+            {locale === 'es-AR' ? 'EN' : 'ES'}
+          </button>
           
           <div className="relative">
             <button
@@ -62,7 +76,7 @@ export default function Topbar() {
             {showTooltip && (
               <div className="absolute top-full right-0 mt-2 w-64 bg-black text-white p-3 rounded-lg shadow-lg text-sm z-50">
                 <div className="absolute -top-1 right-4 w-2 h-2 bg-white transform rotate-45"></div>
-                Hey, it's better for the planet –and for your eyes– if we keep the lights off. Thanks!
+                {t('topbar.lightThemeTooltip')}
               </div>
             )}
           </div>

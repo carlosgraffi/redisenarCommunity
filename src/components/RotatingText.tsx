@@ -6,7 +6,8 @@ import { useTranslation } from "@/contexts/TranslationContext";
 
 export default function RotatingText() {
   const { t } = useTranslation();
-  const words = t('hero.rotatingWords').split(',') || ["construyo", "lidero", "diseño", "pienso", "gestiono", "creo"];
+  const rotatingWords = t('hero.rotatingWords');
+  const words = Array.isArray(rotatingWords) ? rotatingWords : (typeof rotatingWords === 'string' ? rotatingWords.split(',').map(word => word.trim()) : ["construyo", "lidero", "diseño", "pienso", "gestiono", "creo"]);
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
