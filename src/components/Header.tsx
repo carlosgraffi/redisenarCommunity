@@ -1,36 +1,17 @@
-
-'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
-import RotatingText from './RotatingText';
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+import RotatingText from "./RotatingText";
 
 export default function Header() {
   return (
     <header className="relative py-12 md:py-16 lg:py-20" role="banner">
       <div className="flex flex-col items-start justify-center min-h-[40vh] md:min-h-[50vh]">
         {/* Main heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="w-full"
-        >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-thunder leading-tight mb-6">
-            Carlos Graffi
-          </h1>
-          <div className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
-            <RotatingText 
-              texts={[
-                "Product Designer focused on climate tech",
-                "Building AI tools for climate action", 
-                "Designing systems that accelerate change",
-                "Maker who learns what's needed to build"
-              ]}
-              interval={3000}
-            />
-          </div>
-        </motion.div>
-
+        <span className="flex gap-2 text-lg md:text-xl text-gray-300 leading-none">
+          <p className="line-through">I'm a passionate designer</p>
+        </span>
+        <RotatingText />
         {/* Description */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,12 +19,6 @@ export default function Header() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-3xl"
         >
-          <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
-            Over 10+ years designing products at the intersection of technology and climate action. 
-            I lead design at Open Earth Foundation, where I've helped create tools used by 50+ cities 
-            across Latin America to track emissions and plan climate action.
-          </p>
-          
           <div className="flex flex-col sm:flex-row gap-4">
             <motion.a
               href="#projects"

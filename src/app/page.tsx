@@ -25,7 +25,7 @@ export default function Home() {
                 I'm Carlos Graffi — a designer who builds things with a purpose.
               </p>
               <p className="text-base text-gray-300 leading-relaxed mb-6">
-                Over the last 10+ years, I've designed, led, and launched products at the intersection of design, technology, and climate action. My background is in graphic and product design, but I've never drawn a line between thinking and making. I sketch, code, test, and iterate. I work with frontend components when needed, but I don't consider myself a frontend developer. I'm a maker — someone who learns what's needed to bring an idea to life.
+                Over the last 10+ years, I've designed, led, and launched products at the intersection of design, technology, and (more recently) climate action. My background is in graphic and product design, but I've never drawn a line between thinking and making. I sketch, code, test, and iterate. I work with frontend components when needed, but I don't consider myself a frontend developer. I'm a maker — someone who learns what's needed to bring an idea to life.
               </p>
               <p className="text-base text-gray-300 leading-relaxed mb-6">
                 Since 2022, I've been leading product design at the Open Earth Foundation, developing open-source digital tools to accelerate climate action. In 2024, I became Head of Impact, ensuring our tools contribute to real-world emissions reductions and climate strategy implementation across 50+ cities in Latin America.

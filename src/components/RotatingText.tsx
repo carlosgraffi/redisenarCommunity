@@ -4,15 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const words = [
-  "solver",
-  "utilizar",
-  "generar",
-  "ciclar",
-  "pensar",
-  "clamar",
-  "ubicar",
-  "escribir",
-  "diseñar",
+  "build",
+  "lead",
+  "design",
+  "think",
+  "manage",
+  "create",
 ];
 
 export default function RotatingText() {
@@ -56,7 +53,7 @@ export default function RotatingText() {
 
   return (
     <div
-      className="inline-flex items-baseline whitespace-nowrap overflow-y-hidden"
+      className="inline-flex items-baseline whitespace-nowrap overflow-y-hidden mb-8"
       role="region"
       aria-label="Texto rotativo"
       onMouseEnter={() => setIsPaused(true)}
@@ -66,10 +63,10 @@ export default function RotatingText() {
       tabIndex={0}
     >
       <span
-        className="text-[4rem] md:text-[4rem] xs:text-[2rem] font-thunder uppercase leading-relaxed transition-all"
+        className="text-[3rem] md:text-[4rem] xs:text-[2rem] font-thunderLight uppercase mr-2 leading-relaxed transition-all"
         aria-hidden="true"
       >
-        (re)
+        I
       </span>
       <div
         className="inline-block"
@@ -82,13 +79,19 @@ export default function RotatingText() {
             initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
             animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
             exit={prefersReducedMotion ? {} : { opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="text-[4rem] uppercase md:text-[4rem] xs:text-[2rem] font-thunder leading-relaxed inline-block"
+            transition={{ duration: 0.85 }}
+            className="text-[3rem] md:text-[4rem] xs:text-[2rem] font-thunder leading-relaxed inline-block"
           >
             {words[index]}
           </motion.span>
         </AnimatePresence>
       </div>
+      <span
+        className="text-[3rem] md:text-[4rem] xs:text-[2rem] font-thunderLight ml-2 leading-relaxed transition-all"
+        aria-hidden="true"
+      >
+        with purpose
+      </span>
     </div>
   );
 }
