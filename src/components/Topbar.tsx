@@ -24,7 +24,7 @@ export default function Topbar() {
         >
           <h1>
             <span className="text-lg uppercase font-thunder tracking-normal">
-              Carlos Graffi
+              CarlosGraffi
             </span>
           </h1>
         </Link>

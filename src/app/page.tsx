@@ -21,15 +21,22 @@ export default function Home() {
               About Me
             </h2>
             <div className="prose prose-lg prose-invert max-w-none">
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                I'm Carlos Graffi — a designer who builds things with a purpose.
+              <p className="text-base text-gray-300 leading-relaxed mb-6">
+                I'm Carlos. A designer who builds things with a purpose.
               </p>
               <p className="text-base text-gray-300 leading-relaxed mb-6">
-                Over the last 10+ years, I've designed, led, and launched products at the intersection of design, technology, and (more recently) climate action. My background is in graphic and product design, but I've never drawn a line between thinking and making. I sketch, code, test, and iterate. I work with frontend components when needed, but I don't consider myself a frontend developer. I'm a maker — someone who learns what's needed to bring an idea to life.
+                Over the last 10+ years, I've designed, led, and launched products at the intersection of design, technology, and (recently) climate action.
               </p>
               <p className="text-base text-gray-300 leading-relaxed mb-6">
-                Since 2022, I've been leading product design at the Open Earth Foundation, developing open-source digital tools to accelerate climate action. In 2024, I became Head of Impact, ensuring our tools contribute to real-world emissions reductions and climate strategy implementation across 50+ cities in Latin America.
+                My journey as a designer goes back to digitizing graffitis from my friends in Photoshop. A mindset started growing there: <span className="text-white font-semibold mr-2">find a purpose, learn how to do it.</span>
+               I became a self-taught designer. Spent a couple of years training and nurturing from different experiences. Now I effort to give something back.</p>
+              <p className="text-base text-gray-300 leading-relaxed mb-6">
+                Since 2022, I've been leading product design at the Open Earth Foundation, developing open-source digital tools to accelerate climate action. In 2025, I became Head of Impact, ensuring our tools contribute to real-world emissions reductions and climate strategy implementation across 50+ cities in Latin America. 
+              </p>              
+              <p className="text-base text-gray-300 leading-relaxed mb-6">
+                I now also have my own project ("Rediseñar"), a space where I keep building tools for citizen and climate action against environmental and social crisis in Argentina. My purpose is to collaborate and constantly to share how design goes beyond definitions, users and aesthetics. <span className="text-white font-semibold mr-2">It's a powerful tool for social change.</span>
               </p>
+
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-gray-700">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-white">10+</div>
@@ -41,11 +48,11 @@ export default function Home() {
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-white">5</div>
-                  <div className="text-sm text-gray-400">AI tools launched</div>
+                  <div className="text-sm text-gray-400">Climate tools launched</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-white">1,000+</div>
-                  <div className="text-sm text-gray-400">Students mentored</div>
+                  <div className="text-2xl font-bold text-white">$3M+</div>
+                  <div className="text-sm text-gray-400">Won in grants</div>
                 </div>
               </div>
             </div>
@@ -66,7 +73,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:carlos@redisenar.com"
+                href="mailto:carlos@redisen.ar"
                 className="inline-block bg-white text-black border-2 py-3 px-6 font-bold text-sm tracking-wider hover:bg-white hover:text-black hover:rounded-br-2xl hover:rounded-tl-2xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/50"
                 aria-label="Send email to Carlos"
               >
