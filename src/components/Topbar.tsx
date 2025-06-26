@@ -8,7 +8,7 @@ export default function Topbar() {
 
   const handleLightThemeClick = () => {
     setShowTooltip(true);
-    setTimeout(() => setShowTooltip(false), 3000);
+    setTimeout(() => setShowTooltip(false), 5000);
   };
 
   return (
@@ -60,9 +60,9 @@ export default function Topbar() {
             </button>
             
             {showTooltip && (
-              <div className="absolute top-full right-0 mt-2 w-64 bg-white text-black p-3 rounded-lg shadow-lg text-sm z-50">
+              <div className="absolute top-full right-0 mt-2 w-64 bg-black text-white p-3 rounded-lg shadow-lg text-sm z-50">
                 <div className="absolute -top-1 right-4 w-2 h-2 bg-white transform rotate-45"></div>
-                Hey, it's better for the planet –and your eyes– if we keep the lights off. Thanks!
+                Hey, it's better for the planet –and for your eyes– if we keep the lights off. Thanks!
               </div>
             )}
           </div>

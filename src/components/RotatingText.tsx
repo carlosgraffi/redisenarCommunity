@@ -63,7 +63,7 @@ export default function RotatingText() {
       tabIndex={0}
     >
       <span
-        className="text-[3rem] md:text-[4rem] xs:text-[2rem] font-thunderLight uppercase mr-2 leading-relaxed transition-all"
+        className="text-[4rem] md:text-[4rem] xs:text-[2rem] font-thunderLight uppercase mr-2 leading-relaxed transition-all"
         aria-hidden="true"
       >
         I
@@ -80,14 +80,14 @@ export default function RotatingText() {
             animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
             exit={prefersReducedMotion ? {} : { opacity: 0, y: -20 }}
             transition={{ duration: 0.85 }}
-            className="text-[3rem] md:text-[4rem] xs:text-[2rem] font-thunder leading-relaxed inline-block"
+            className="text-[4rem] md:text-[4rem] xs:text-[2rem] font-thunder leading-relaxed inline-block"
           >
             {words[index]}
           </motion.span>
         </AnimatePresence>
       </div>
       <span
-        className="text-[3rem] md:text-[4rem] xs:text-[2rem] font-thunderLight ml-2 leading-relaxed transition-all"
+        className="text-[4rem] md:text-[4rem] xs:text-[2rem] font-thunderLight ml-2 leading-relaxed transition-all"
         aria-hidden="true"
       >
         with purpose
