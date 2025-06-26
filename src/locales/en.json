@@ -9,12 +9,7 @@
   },
   "hero": {
     "rotatingWords": ["build", "lead", "design", "think", "manage", "create"],
-    "withPurpose": "with purpose",
-    "crossedOut": "I'm a passionate designer",
-    "viewProjects": "View Projects"
-  },
-  "topbar": {
-    "lightThemeTooltip": "Hey, it's better for the planet –and for your eyes– if we keep the lights off. Thanks!"
+    "withPurpose": "with purpose"
   },
   "about": {
     "title": "About Me",

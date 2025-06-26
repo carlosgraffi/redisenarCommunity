@@ -9,12 +9,7 @@
   },
   "hero": {
     "rotatingWords": ["construyo", "lidero", "diseño", "pienso", "gestiono", "creo"],
-    "withPurpose": "con propósito",
-    "crossedOut": "Soy un diseñador apasionado",
-    "viewProjects": "Ver Proyectos"
-  },
-  "topbar": {
-    "lightThemeTooltip": "Oye, es mejor para el planeta –y para tus ojos– si mantenemos las luces apagadas. ¡Gracias!"
+    "withPurpose": "con propósito"
   },
   "about": {
     "title": "Acerca de Mí",
