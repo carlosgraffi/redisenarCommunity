@@ -30,6 +30,14 @@ export default function Topbar() {
         </Link>
         
         <div className="ml-auto flex items-center gap-4">
+          <a
+            href="/projects"
+            className="hover:text-white hover:underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
+            aria-label="View projects"
+          >
+            Projects
+          </a>
+          
           <div className="relative">
             <button
               onClick={handleLightThemeClick}
