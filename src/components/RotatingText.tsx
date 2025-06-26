@@ -1,12 +1,11 @@
+
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { useTranslation } from "@/contexts/TranslationContext";
 
 export default function RotatingText() {
-  const { t } = useTranslation();
-  const words = t('hero.rotatingWords').split(',') || ["construyo", "lidero", "diseño", "pienso", "gestiono", "creo"];
+  const words = ["build", "lead", "design", "think", "manage", "create"];
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -49,7 +48,7 @@ export default function RotatingText() {
     <div
       className="flex flex-col items-start mb-8"
       role="region"
-      aria-label={t('accessibility.rotatingText')}
+      aria-label="Rotating text display"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
@@ -66,7 +65,7 @@ export default function RotatingText() {
         <div
           className="inline-block"
           role="timer"
-          aria-label={`${t('accessibility.currentWord')}: ${words[index]}`}
+          aria-label={`Current word: ${words[index]}`}
         >
           <AnimatePresence mode="wait">
             <motion.span
@@ -86,7 +85,7 @@ export default function RotatingText() {
         className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-thunderLight leading-none transition-all"
         aria-hidden="true"
       >
-        {t('hero.withPurpose')}
+        with purpose
       </span>
     </div>
   );

@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -20,7 +21,7 @@ export default function Topbar() {
         <Link 
           href="/"
           className="font-tostada text-2xl hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg px-2"
-          aria-label="rediseñar - Ir al inicio"
+          aria-label="rediseñar - Go to home"
         >
           <h1>
             <span className="text-lg uppercase font-thunder tracking-normal">
