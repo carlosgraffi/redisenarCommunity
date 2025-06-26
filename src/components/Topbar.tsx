@@ -1,55 +1,54 @@
 
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Topbar() {
   const [showTooltip, setShowTooltip] = useState(false);
 
-  const handleLightThemeClick = () => {
-    setShowTooltip(true);
-    setTimeout(() => setShowTooltip(false), 5000);
-  };
-
   return (
-    <header 
-      className="w-full bg-background border-b border-white/10"
-      role="banner"
-    >
-      <div className="container px-4 py-3 flex items-center">
-        <Link 
-          href="/"
-          className="font-tostada text-2xl hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg px-2"
-          aria-label="rediseñar - Go to home"
+    <header className="w-full bg-black text-white py-4 sticky top-0 z-50 border-b border-gray-800">
+      <div className="mx-4 md:mx-8 lg:mx-[8rem] flex justify-between items-center">
+        {/* Logo/Name */}
+        <motion.div 
+          className="text-lg font-thunder"
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <h1>
-            <span className="text-lg uppercase font-thunder tracking-normal">
-              CarlosGraffi
-            </span>
-          </h1>
-        </Link>
-        
-        <div className="ml-auto flex items-center gap-4">
-          <a
-            href="/projects"
-            className="hover:text-white hover:underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
-            aria-label="View projects"
-          >
+          <a href="/" className="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 rounded">
+            Carlos Graffi
+          </a>
+        </motion.div>
+
+        {/* Navigation */}
+        <nav className="hidden md:flex space-x-8">
+          <a href="#about" className="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 rounded px-2 py-1">
+            About
+          </a>
+          <a href="#projects" className="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 rounded px-2 py-1">
             Projects
           </a>
-          
+          <a href="#contact" className="hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 rounded px-2 py-1">
+            Contact
+          </a>
+        </nav>
+
+        {/* Dark mode notice */}
+        <div className="flex items-center space-x-4">
           <div className="relative">
             <button
-              onClick={handleLightThemeClick}
-              className="p-2 hover:bg-white/10 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
-              aria-label="Toggle light theme"
+              onMouseEnter={() => setShowTooltip(true)}
+              onMouseLeave={() => setShowTooltip(false)}
+              className="p-2 hover:bg-gray-800 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+              aria-label="Dark mode information"
             >
               <svg 
                 className="w-5 h-5" 
                 fill="none" 
                 stroke="currentColor" 
-                viewBox="0 0 24 24"
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path 
                   strokeLinecap="round" 
