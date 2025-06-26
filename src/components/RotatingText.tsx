@@ -53,7 +53,7 @@ export default function RotatingText() {
 
   return (
     <div
-      className="inline-flex items-baseline whitespace-nowrap overflow-y-hidden mb-8"
+      className="flex flex-col items-start mb-8"
       role="region"
       aria-label="Texto rotativo"
       onMouseEnter={() => setIsPaused(true)}
@@ -62,32 +62,34 @@ export default function RotatingText() {
       onBlur={() => setIsPaused(false)}
       tabIndex={0}
     >
-      <span
-        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-thunderLight uppercase mr-1 sm:mr-2 leading-tight transition-all"
-        aria-hidden="true"
-      >
-        I
-      </span>
-      <div
-        className="inline-block"
-        role="timer"
-        aria-label={`Palabra actual: ${words[index]}`}
-      >
-        <AnimatePresence mode="wait">
-          <motion.span
-            key={words[index]}
-            initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            exit={prefersReducedMotion ? {} : { opacity: 0, y: -20 }}
-            transition={{ duration: 0.85 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-thunder leading-tight inline-block"
-          >
-            {words[index]}
-          </motion.span>
-        </AnimatePresence>
+      <div className="flex items-baseline">
+        <span
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-thunderLight uppercase mr-1 sm:mr-2 leading-tight transition-all"
+          aria-hidden="true"
+        >
+          I
+        </span>
+        <div
+          className="inline-block"
+          role="timer"
+          aria-label={`Palabra actual: ${words[index]}`}
+        >
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={words[index]}
+              initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+              animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+              exit={prefersReducedMotion ? {} : { opacity: 0, y: -20 }}
+              transition={{ duration: 0.85 }}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-thunder leading-tight inline-block"
+            >
+              {words[index]}
+            </motion.span>
+          </AnimatePresence>
+        </div>
       </div>
       <span
-        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-thunderLight ml-1 sm:ml-2 leading-tight transition-all"
+        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-thunderLight leading-tight transition-all"
         aria-hidden="true"
       >
         with purpose
