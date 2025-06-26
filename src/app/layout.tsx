@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import QueryProvider from "@/components/QueryProvider";
+import { TranslationProvider } from "@/contexts/TranslationContext";
 
 const thunder = localFont({
   src: "../../public/fonts/right-grotesk/RightGrotesk-Black.otf",
@@ -83,13 +84,15 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <QueryProvider>
-          <a
-            href="#main-content"
-            className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-black focus:text-white"
-          >
-            Saltar al contenido principal
-          </a>
-          {children}
+          <TranslationProvider>
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-black focus:text-white"
+            >
+              Saltar al contenido principal
+            </a>
+            {children}
+          </TranslationProvider>
         </QueryProvider>
       </body>
     </html>
