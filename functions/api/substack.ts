@@ -1,16 +1,14 @@
-import { NextResponse } from 'next/server';
-
+// Cloudflare Pages Function — replaces the old Next.js route at src/app/api/substack/route.ts
 const SUBSTACK_URL = 'https://redisenar.substack.com';
 
-export async function GET() {
+export const onRequestGet: PagesFunction = async () => {
   try {
-    // First try to fetch the RSS feed
     const response = await fetch(`${SUBSTACK_URL}/feed`, {
       headers: {
         'Accept': 'application/rss+xml',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
       },
-      next: { revalidate: 3600 } // Cache for 1 hour
+      cf: { cacheTtl: 3600, cacheEverything: true },
     });
 
     if (!response.ok) {
@@ -18,40 +16,43 @@ export async function GET() {
     }
 
     const text = await response.text();
-    const posts = await parseRSSFeed(text);
+    let posts = parseRSSFeed(text);
 
     if (posts.length === 0) {
       // If no posts found, try fetching from the API
       const apiResponse = await fetch(`${SUBSTACK_URL}/api/v1/archive`);
       if (apiResponse.ok) {
-        const apiPosts = await apiResponse.json();
         type PostType = {
-  title: string;
-  description?: string;
-  subtitle?: string;
-  slug: string;
-  author?: string;
-};
-
-return NextResponse.json(apiPosts.slice(0, 3).map((post: PostType) => ({
+          title: string;
+          description?: string;
+          subtitle?: string;
+          slug: string;
+          author?: string;
+        };
+        const apiPosts = (await apiResponse.json()) as PostType[];
+        posts = apiPosts.slice(0, 3).map((post) => ({
           title: post.title,
           description: post.description || post.subtitle || '',
           link: `${SUBSTACK_URL}/p/${post.slug}`,
           author: post.author || 'Carlos Octavio Graffi'
-        })));
+        }));
       }
     }
 
-    return NextResponse.json(posts);
+    return new Response(JSON.stringify(posts), {
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'public, max-age=3600',
+      },
+    });
   } catch (error) {
     console.error('Error fetching Substack posts:', error);
-    // Return a proper error response
-    return NextResponse.json(
-      { error: 'Failed to fetch posts' }, 
-      { status: 500 }
-    );
+    return new Response(JSON.stringify({ error: 'Failed to fetch posts' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
-}
+};
 
 function parseRSSFeed(xml: string) {
   const posts = [];

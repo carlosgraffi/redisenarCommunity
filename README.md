@@ -20,6 +20,21 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Deploy (Cloudflare Pages)
+
+El sitio se exporta como estático (`output: 'export'` en `next.config.ts`) y se hostea en Cloudflare Pages con el dominio [redisen.ar](https://redisen.ar).
+
+- **Build command:** `npm run build`
+- **Output directory:** `out`
+- `functions/api/substack.ts` es una [Pages Function](https://developers.cloudflare.com/pages/functions/) que sirve `/api/substack` (proxy del RSS de Substack, reemplaza la vieja ruta API de Next.js).
+
+Cada push a `main` dispara un deploy automático si el repo está conectado en el dashboard de Cloudflare Pages. Para probar localmente el sitio completo (incluida la función):
+
+```bash
+npm run build
+npx wrangler pages dev out
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

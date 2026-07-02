@@ -1,31 +1,14 @@
 import type { NextConfig } from 'next'
 
 const config: NextConfig = {
-  generateBuildId: async () => {
-    return `build-${Date.now()}`
+  // Static export for Cloudflare Pages
+  output: 'export',
+
+  // next/image optimization requires a server; serve images as-is
+  images: {
+    unoptimized: true,
   },
-  async headers() {
-    return [
-      {
-        source: '/fonts/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/_next/static/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-    ]
-  },
+
   webpack(config) {
     config.module.rules.push({
       test: /\.(woff|woff2|eot|ttf|otf)$/i,
