@@ -184,14 +184,8 @@ export default function Home() {
         </section>
       </main>
       <div className="max-w-screen overflow-x-hidden">
-        <div className="w-screen flex gap-2 mx-auto justify-center items-center py-8 text-center text-white text-[4rem] leading-none">
-          <img
-            src="/vector.svg"
-            alt=""
-            className="w-[3rem] h-[3rem] align-baseline"
-            aria-hidden="true"
-          />
-          <span className="font-bricolage tracking-tighter font-black align-baseline">
+        <div className="w-screen py-8 text-center text-white leading-none">
+          <span className="font-bricolage tracking-tighter font-black text-[21.5vw] whitespace-nowrap">
             Rediseñar
           </span>
         </div>
