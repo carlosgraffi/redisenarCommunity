@@ -1,9 +1,19 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
-const words = ['solver', 'utilizar', 'generar', 'ciclar', 'diseñar'];
+const words = [
+  "solver",
+  "utilizar",
+  "generar",
+  "ciclar",
+  "pensar",
+  "clamar",
+  "ubicar",
+  "escribir",
+  "diseñar",
+];
 
 export default function RotatingText() {
   const [index, setIndex] = useState(0);
@@ -11,15 +21,15 @@ export default function RotatingText() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     setPrefersReducedMotion(mediaQuery.matches);
 
     const handleChange = (e: MediaQueryListEvent) => {
       setPrefersReducedMotion(e.matches);
     };
 
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   useEffect(() => {
@@ -33,20 +43,20 @@ export default function RotatingText() {
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight') {
+      if (e.key === "ArrowRight") {
         setIndex((current) => (current + 1) % words.length);
-      } else if (e.key === 'ArrowLeft') {
+      } else if (e.key === "ArrowLeft") {
         setIndex((current) => (current - 1 + words.length) % words.length);
       }
     };
 
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
   }, []);
 
   return (
-    <div 
-      className="inline-flex items-baseline whitespace-nowrap overflow-hidden"
+    <div
+      className="inline-flex items-baseline whitespace-nowrap overflow-y-hidden"
       role="region"
       aria-label="Texto rotativo"
       onMouseEnter={() => setIsPaused(true)}
@@ -55,13 +65,13 @@ export default function RotatingText() {
       onBlur={() => setIsPaused(false)}
       tabIndex={0}
     >
-      <span 
-        className="text-6xl md:text-[6rem] font-tostada leading-relaxed transition-all"
+      <span
+        className="text-[4rem] lg:text-[6rem] md:text-[4rem] xs:text-[2rem] font-bricolage font-black leading-relaxed tracking-tighter transition-all"
         aria-hidden="true"
       >
-        re
+        Re
       </span>
-      <div 
+      <div
         className="inline-block"
         role="timer"
         aria-label={`Palabra actual: ${words[index]}`}
@@ -73,7 +83,7 @@ export default function RotatingText() {
             animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
             exit={prefersReducedMotion ? {} : { opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="text-6xl md:text-[6rem] font-tostada leading-relaxed inline-block"
+            className="text-[4rem] lg:text-[6rem] md:text-[6rem] xs:text-[2rem] font-bricolage font-black leading-relaxed tracking-tighter inline-block"
           >
             {words[index]}
           </motion.span>

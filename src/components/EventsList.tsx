@@ -29,7 +29,7 @@ const EventCard = ({ event }: { event: Event }) => {
 
   const content = (
     <div className="flex flex-col gap-4 group">
-      <h3 className="text-5xl font-tostada transition-transform duration-300 group-hover:-translate-x-2 py-2 break-words">
+      <h3 className="text-4xl font-bricolage font-bold leading-[1em] transition-transform duration-300 group-hover:-translate-x-2 pt-2 break-words">
         {event.title}
       </h3>
       <div className="space-y-4">

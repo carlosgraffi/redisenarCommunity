@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+.font-rethink {
+  font-family: var(--font-rethink), sans-serif;
+}
+
+.font-bricolage {
+  font-family: var(--font-bricolage-grotesque), sans-serif;
+}
+
+.bg-background {
+  background-color: #000000;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-rgb: 26, 26, 26;

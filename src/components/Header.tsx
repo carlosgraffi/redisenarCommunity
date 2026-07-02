@@ -7,8 +7,8 @@ export default function Header() {
         <RotatingText />
         <div className="text-lg md:text-xl">
           <span>Un lugar para </span>
-          <span className="font-tostada">re</span>
-          <span className="italic">-todo.</span>
+          <span className="italic">re</span>
+          <span>-todo.</span>
         </div>
       </div>
     </div>

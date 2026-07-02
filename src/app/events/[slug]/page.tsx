@@ -134,7 +134,7 @@ export default async function EventPage({ params }: { params: { slug: string } }
 
           {/* Event Header */}
           <div className="max-w-3xl mx-auto mb-12">
-            <h1 className="text-5xl md:text-6xl font-tostada mb-8">
+            <h1 className="text-5xl md:text-6xl font-bricolage font-bold mb-8">
               {event.title}
             </h1>
 
