@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import FadeIn from "@/components/FadeIn";
 
 interface BlogPostProps {
   title: string;
@@ -45,31 +45,23 @@ export default function BlogPost({
 
   if (link) {
     return (
-      <motion.a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg p-2"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        aria-label={`Leer artículo: ${cleanTitle} por ${author}`}
-      >
-        {content}
-      </motion.a>
+      <FadeIn>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg p-2"
+          aria-label={`Leer artículo: ${cleanTitle} por ${author}`}
+        >
+          {content}
+        </a>
+      </FadeIn>
     );
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      role="article"
-    >
-      {content}
-    </motion.div>
+    <FadeIn>
+      <div role="article">{content}</div>
+    </FadeIn>
   );
 }

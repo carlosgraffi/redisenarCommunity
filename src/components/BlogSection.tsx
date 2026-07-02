@@ -1,7 +1,6 @@
 'use client';
 
-import { useQuery } from '@tanstack/react-query';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import BlogPost from '@/components/BlogPost';
 import LoadingPost from '@/components/LoadingPost';
 
@@ -49,27 +48,30 @@ async function fetchPosts() {
 }
 
 export default function BlogSection() {
-  const { data: posts, isLoading, isError } = useQuery({
-    queryKey: ['posts'],
-    queryFn: fetchPosts,
-    retry: 2,
-    retryDelay: 1000,
-  });
+  const [posts, setPosts] = useState<PostType[] | null>(null);
+  const isLoading = posts === null;
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchPosts().then((data) => {
+      if (!cancelled) setPosts(data);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <section 
       className="py-16 md:py-24 lg:py-32"
       aria-labelledby="blog-section-title"
     >
-      <motion.h2 
+      <h2
         id="blog-section-title"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-        className="text-xl mb-24 text-center"
+        className="text-xl mb-24 text-center fade-in-mount"
       >
         Artículos
-      </motion.h2>
+      </h2>
       <div 
         className="space-y-24 max-w-2xl mx-auto"
         role="feed"
@@ -82,19 +84,6 @@ export default function BlogSection() {
             <LoadingPost />
             <LoadingPost />
           </>
-        ) : isError ? (
-          <div 
-            className="text-center space-y-4"
-            role="alert"
-            aria-live="polite"
-          >
-            <div className="text-red-400">
-              Error al cargar los artículos. Mostrando contenido de ejemplo.
-            </div>
-            {FALLBACK_POSTS.map((post: PostType, index) => (
-              <BlogPost key={index} {...post} />
-            ))}
-          </div>
         ) : (
           posts?.map((post: PostType, index: number) => (
             <BlogPost key={index} {...post} />

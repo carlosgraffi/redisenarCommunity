@@ -9,7 +9,6 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        tostada: ['tostada', 'serif'],
         bricolage: ['var(--font-bricolage-grotesque)', 'sans-serif'],
         rethink: ['var(--font-rethink)', 'sans-serif'],
       },

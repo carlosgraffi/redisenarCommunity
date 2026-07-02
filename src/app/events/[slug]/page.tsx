@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       openGraph: {
         title: `${event.title} | Eventos | Rediseñar`,
         description: event.description,
-        url: `https://redisenar.com/events/${slug}`,
+        url: `https://redisen.ar/events/${slug}`,
         type: 'website',
       },
       twitter: {

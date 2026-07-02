@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Eventos y Workshops | Rediseñar',
     description: 'Explora eventos y workshops organizados por la comunidad Rediseñar.',
-    url: 'https://redisenar.com/events',
+    url: 'https://redisen.ar/events',
     type: 'website',
   },
   twitter: {

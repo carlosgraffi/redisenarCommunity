@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -40,20 +39,17 @@ export default function ScrollToTop() {
   };
 
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-4 bg-white/10 hover:bg-white/20 
-                     backdrop-blur-sm rounded-full transition-colors duration-300
-                     focus:outline-none focus:ring-2 focus:ring-white/50
-                     z-50"
-          aria-label="Volver al inicio de la página"
-          title="Presiona 'Home' o haz clic para volver al inicio"
-        >
+    <button
+      onClick={scrollToTop}
+      className={`fixed bottom-8 right-8 p-4 bg-white/10 hover:bg-white/20
+                 backdrop-blur-sm rounded-full transition-all duration-300
+                 focus:outline-none focus:ring-2 focus:ring-white/50
+                 z-50 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'}`}
+      aria-label="Volver al inicio de la página"
+      aria-hidden={!isVisible}
+      tabIndex={isVisible ? 0 : -1}
+      title="Presiona 'Home' o haz clic para volver al inicio"
+    >
           <svg
             className="w-6 h-6"
             fill="none"
@@ -69,8 +65,6 @@ export default function ScrollToTop() {
               d="M5 10l7-7m0 0l7 7m-7-7v18"
             />
           </svg>
-        </motion.button>
-      )}
-    </AnimatePresence>
+    </button>
   );
 }

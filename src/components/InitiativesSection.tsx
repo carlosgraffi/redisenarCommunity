@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import FadeIn from "@/components/FadeIn";
 
 interface Initiative {
   title: string;
@@ -41,19 +41,17 @@ const InitiativeCard = ({ initiative }: { initiative: Initiative }) => {
   );
 
   return (
-    <motion.a
-      href={initiative.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg p-2"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      aria-label={`Ver iniciativa: ${initiative.title} por ${initiative.author}`}
-    >
-      {content}
-    </motion.a>
+    <FadeIn>
+      <a
+        href={initiative.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg p-2"
+        aria-label={`Ver iniciativa: ${initiative.title} por ${initiative.author}`}
+      >
+        {content}
+      </a>
+    </FadeIn>
   );
 };
 

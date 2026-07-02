@@ -38,3 +38,39 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* Animaciones de entrada (reemplazo de framer-motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in-up {
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  .fade-in-up:not(.in-view) {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .fade-in-mount {
+    animation: fade-in 0.5s ease-out 0.4s both;
+  }
+}
+
+/* Palabra rotativa del header (reemplazo de framer-motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .word-rotate {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .word-rotate.word-out {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  @keyframes word-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: none; }
+  }
+  .word-rotate.word-in {
+    animation: word-in 0.25s ease both;
+  }
+}

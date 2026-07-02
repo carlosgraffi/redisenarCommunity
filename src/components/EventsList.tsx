@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
+import FadeIn from '@/components/FadeIn';
 import { MapPin, Calendar, Globe, CalendarCheck } from 'lucide-react';
 import Link from 'next/link';
 import { getEvents, Event } from '@/lib/events';
@@ -128,15 +128,11 @@ const EventCard = ({ event }: { event: Event }) => {
   );
 
   return (
-    <motion.div 
-      className="block transition-all duration-300 hover:scale-[1.01] rounded-lg p-2"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-    >
-      {content}
-    </motion.div>
+    <FadeIn>
+      <div className="block transition-all duration-300 hover:scale-[1.01] rounded-lg p-2">
+        {content}
+      </div>
+    </FadeIn>
   );
 };
 

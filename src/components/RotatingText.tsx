@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const words = [
@@ -15,8 +14,11 @@ const words = [
   "diseñar",
 ];
 
+const EXIT_MS = 250;
+
 export default function RotatingText() {
   const [index, setIndex] = useState(0);
+  const [isLeaving, setIsLeaving] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
@@ -35,11 +37,21 @@ export default function RotatingText() {
   useEffect(() => {
     if (!isPaused && !prefersReducedMotion) {
       const timer = setInterval(() => {
-        setIndex((current) => (current + 1) % words.length);
+        setIsLeaving(true);
       }, 3000);
       return () => clearInterval(timer);
     }
   }, [isPaused, prefersReducedMotion]);
+
+  // Cuando termina la animación de salida, cambia la palabra y anima la entrada
+  useEffect(() => {
+    if (!isLeaving) return;
+    const timeout = setTimeout(() => {
+      setIndex((current) => (current + 1) % words.length);
+      setIsLeaving(false);
+    }, EXIT_MS);
+    return () => clearTimeout(timeout);
+  }, [isLeaving]);
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -76,18 +88,12 @@ export default function RotatingText() {
         role="timer"
         aria-label={`Palabra actual: ${words[index]}`}
       >
-        <AnimatePresence mode="wait">
-          <motion.span
-            key={words[index]}
-            initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            exit={prefersReducedMotion ? {} : { opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="text-[4rem] lg:text-[6rem] md:text-[6rem] xs:text-[2rem] font-bricolage font-black leading-relaxed tracking-tighter inline-block"
-          >
-            {words[index]}
-          </motion.span>
-        </AnimatePresence>
+        <span
+          key={words[index]}
+          className={`text-[4rem] lg:text-[6rem] md:text-[6rem] xs:text-[2rem] font-bricolage font-black leading-relaxed tracking-tighter inline-block word-rotate ${isLeaving ? "word-out" : "word-in"}`}
+        >
+          {words[index]}
+        </span>
       </div>
     </div>
   );
